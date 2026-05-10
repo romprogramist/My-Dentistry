@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { VideoPlayer } from "@/components/blocks/VideoPlayer";
 
 export function HomeMicroscope() {
   return (
@@ -24,10 +25,13 @@ export function HomeMicroscope() {
             Узнать больше
           </Link>
         </div>
-        <div className="aspect-[4/3] rounded-2xl bg-slate-200">
-          <div className="flex h-full items-center justify-center text-muted-foreground">
-            Фото микроскопа в кабинете
-          </div>
+        <div className="mx-auto w-full max-w-sm">
+          <VideoPlayer
+            src="/media/video/microscope"
+            poster="/media/video/microscope.poster.webp"
+            title="Дентальный микроскоп Zeiss в работе"
+            aspectRatio="9/16"
+          />
         </div>
       </div>
     </section>
