@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
+import { VideoPlayer } from "@/components/blocks/VideoPlayer";
 
 export const metadata = createPageMetadata({
   title: "О клинике",
@@ -67,6 +68,74 @@ export default function AboutPage() {
             <dd className="text-muted-foreground">{CLINIC.founded}</dd>
           </div>
         </dl>
+
+        <h2 className="mt-12 text-2xl font-bold">Клиника в работе</h2>
+
+        <figure className="mt-6 overflow-hidden rounded-2xl bg-slate-200">
+          <img
+            src="/media/clinic/reception-wide.webp"
+            alt="Приёмная клиники «Моя Стоматология»"
+            width={1600}
+            height={1200}
+            loading="lazy"
+            decoding="async"
+            className="h-auto w-full object-cover"
+          />
+        </figure>
+
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl bg-slate-200">
+            <img
+              src="/media/clinic/doctor-at-work-1.webp"
+              alt="Команда клиники в работе"
+              width={1200}
+              height={1600}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full object-cover"
+            />
+          </figure>
+          <figure className="overflow-hidden rounded-2xl bg-slate-200">
+            <img
+              src="/media/clinic/doctor-at-work-2.webp"
+              alt="Лечение пациента"
+              width={1200}
+              height={1600}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full object-cover"
+            />
+          </figure>
+        </div>
+
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl bg-slate-200">
+            <img
+              src="/media/procedures/implant-1.webp"
+              alt="Имплантация — установка имплантата"
+              width={1200}
+              height={1600}
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full object-cover"
+            />
+          </figure>
+          <VideoPlayer
+            src="/media/video/clinic-tour"
+            poster="/media/video/clinic-tour.poster.webp"
+            title="Тур по кабинету"
+            aspectRatio="9/16"
+          />
+        </div>
+
+        <div className="mt-4">
+          <VideoPlayer
+            src="/media/video/treatment"
+            poster="/media/video/treatment.poster.webp"
+            title="Общий план лечения"
+            aspectRatio="9/16"
+          />
+        </div>
       </article>
     </>
   );
