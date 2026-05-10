@@ -45,9 +45,16 @@ export function HomeHero() {
         </div>
 
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 md:aspect-square">
-          <div className="flex h-full items-center justify-center text-muted-foreground">
-            Фото клиники
-          </div>
+          <img
+            src="/media/clinic/reception-detail.webp"
+            alt="Приёмная клиники «Моя Стоматология» — Сочи, Донская 52"
+            width={1200}
+            height={1600}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </div>
       </div>
     </section>
