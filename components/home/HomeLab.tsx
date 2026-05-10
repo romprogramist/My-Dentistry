@@ -5,10 +5,16 @@ export function HomeLab() {
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
       <div className="grid items-center gap-10 md:grid-cols-2">
-        <div className="aspect-[4/3] rounded-2xl bg-slate-200">
-          <div className="flex h-full items-center justify-center text-muted-foreground">
-            Фото зубного техника / лаборатории
-          </div>
+        <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200">
+          <img
+            src="/media/clinic/reception-wide.webp"
+            alt="Интерьер клиники «Моя Стоматология»"
+            width={1600}
+            height={1200}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </div>
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">
