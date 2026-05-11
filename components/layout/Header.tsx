@@ -38,15 +38,24 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           {primaryPhone ? (
-            <a
-              href={`tel:${primaryPhone.tel}`}
-              className="hidden items-center gap-2 text-sm font-semibold text-brand-700 md:flex"
-            >
-              <Phone className="h-4 w-4" />
-              {primaryPhone.display}
-            </a>
+            <>
+              <a
+                href={`tel:${primaryPhone.tel}`}
+                className="hidden items-center gap-2 text-sm font-semibold text-brand-700 md:flex"
+              >
+                <Phone className="h-4 w-4" />
+                {primaryPhone.display}
+              </a>
+              <a
+                href={`tel:${primaryPhone.tel}`}
+                aria-label={`Позвонить ${primaryPhone.display}`}
+                className="touch-target text-brand-700 md:hidden"
+              >
+                <Phone className="h-5 w-5" />
+              </a>
+            </>
           ) : null}
           <Link href="/zapis/" className={buttonVariants({ size: "sm" })}>
             Записаться
