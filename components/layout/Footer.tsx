@@ -23,7 +23,7 @@ function InstagramIcon({ className }: { className?: string }) {
 export function Footer() {
   return (
     <footer className="border-t bg-slate-50">
-      <div className="container mx-auto grid gap-8 px-4 py-12 md:grid-cols-4">
+      <div className="container mx-auto grid gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <h3 className="text-base font-bold text-brand-700">{CLINIC.name}</h3>
           <p className="mt-2 text-sm text-muted-foreground">
