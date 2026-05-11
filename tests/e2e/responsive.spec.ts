@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
 import path from "node:path";
+import fs from "node:fs";
+
+fs.mkdirSync("tests/screens", { recursive: true });
 
 const ROUTES = [
   "/",
@@ -36,7 +39,7 @@ for (const route of ROUTES) {
   for (const width of WIDTHS) {
     test(`no horizontal scroll: ${route} @ ${width}`, async ({ page }) => {
       await page.setViewportSize({ width, height: 800 });
-      const response = await page.goto(route, { waitUntil: "networkidle" });
+      const response = await page.goto(route, { waitUntil: "load" });
       expect(response?.status(), `${route} status`).toBeLessThan(500);
 
       const overflow = await page.evaluate(() => ({
