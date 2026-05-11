@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
@@ -20,13 +21,13 @@ export function MobileStickyCTA() {
           Позвонить
         </a>
       ) : null}
-      <a
+      <Link
         href="/zapis/"
         aria-label="Записаться на приём"
         className={buttonVariants({ className: "flex-1 min-h-11" })}
       >
         Записаться
-      </a>
+      </Link>
     </div>
   );
 }

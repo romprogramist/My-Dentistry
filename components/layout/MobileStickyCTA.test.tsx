@@ -1,3 +1,7 @@
+import { vi } from "vitest";
+vi.mock("next/link", () => ({
+  default: ({ href, children, ...rest }: any) => <a href={href} {...rest}>{children}</a>,
+}));
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";
 import { MobileStickyCTA } from "./MobileStickyCTA";
