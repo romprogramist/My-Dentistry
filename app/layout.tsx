@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
 import { buildOrganization, buildMedicalClinic } from "@/lib/schema/builders";
 import { CLINIC } from "@/lib/constants/clinic";
 import "./globals.css";
@@ -37,10 +38,11 @@ export default function RootLayout({
   const clinicSchema = buildMedicalClinic();
   return (
     <html lang="ru" className={inter.variable}>
-      <body className="flex min-h-screen flex-col font-sans antialiased">
+      <body className="flex min-h-screen flex-col font-sans antialiased pb-[72px] md:pb-0">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <MobileStickyCTA />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
