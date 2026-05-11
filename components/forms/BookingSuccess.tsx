@@ -1,8 +1,9 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
+import { cn } from "@/lib/utils";
 
 type Props = { onReset: () => void };
 
@@ -21,14 +22,15 @@ export function BookingSuccess({ onReset }: Props) {
         подберёт удобный слот.
       </p>
       <div className="mt-7 flex w-full max-w-xs flex-col gap-2.5">
-        <Button
-          asChild
-          className="h-12 rounded-lg bg-mint-500 font-semibold text-white shadow-md shadow-mint-500/30 hover:bg-mint-700"
+        <a
+          href={`tel:${primaryPhone.tel}`}
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "h-12 rounded-lg bg-mint-500 font-semibold text-white shadow-md shadow-mint-500/30 hover:bg-mint-700"
+          )}
         >
-          <a href={`tel:${primaryPhone.tel}`}>
-            Позвонить {primaryPhone.display}
-          </a>
-        </Button>
+          Позвонить {primaryPhone.display}
+        </a>
         <Button
           type="button"
           variant="outline"
