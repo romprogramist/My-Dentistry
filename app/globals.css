@@ -16,6 +16,13 @@
   --color-brand-700: #0369a1;
   --color-brand-800: #075985;
   --color-brand-900: #0c4a6e;
+  --color-mint-50:  #ecfeff;
+  --color-mint-100: #cffafe;
+  --color-mint-200: #a5f3fc;
+  --color-mint-500: #06b6d4;
+  --color-mint-600: #0891b2;
+  --color-mint-700: #0e7490;
+  --color-mint-900: #164e63;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
