@@ -31,7 +31,7 @@ describe("BookingForm", () => {
     await user.click(screen.getByRole("button", { name: /записаться/i }));
 
     await waitFor(() => expect(mockSubmit).toHaveBeenCalledTimes(1));
-    expect(mockSubmit.mock.calls[0][0]).toMatchObject({
+    expect(mockSubmit.mock.calls[0]![0]).toMatchObject({
       name: "Иван Иванов",
       phone: "+79181234567",
       consent: true,

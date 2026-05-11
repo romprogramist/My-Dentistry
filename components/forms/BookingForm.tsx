@@ -51,6 +51,7 @@ export function BookingForm({
       phone: "",
       preferredTime: "",
       message: "",
+      // zod schema requires literal `true`; defaultValues must start unchecked
       consent: false as unknown as true,
       serviceSlug: servicePreselected,
     },
@@ -232,7 +233,7 @@ export function BookingForm({
         >
           {status === "submitting" ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
               Отправка...
             </>
           ) : (
