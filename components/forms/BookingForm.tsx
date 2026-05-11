@@ -171,7 +171,7 @@ export function BookingForm({
                 <Textarea
                   {...field}
                   rows={3}
-                  className="rounded-lg border-[1.5px] border-mint-200 bg-white focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15"
+                  className="rounded-lg border-[1.5px] border-mint-200 bg-white px-4 py-2 focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15"
                 />
               </FormControl>
               <FormMessage />
