@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
+import { ArrowRight } from "lucide-react";
 
 const SLUG = "protezirovanie/viniry";
 const TITLE = "Виниры E.max";
@@ -99,6 +100,7 @@ export default function ViniryPage() {
         <div className="mt-4">
           <Link href="/zapis/" className={buttonVariants({ size: "lg" })}>
             Записаться на консультацию
+            <ArrowRight className="ml-1 size-5 transition-transform duration-200 ease-out group-hover/button:translate-x-1" />
           </Link>
         </div>
 
