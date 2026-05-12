@@ -75,7 +75,7 @@ export default async function BlogPostPage({
           {meta.authorName} · {meta.authorRole} ·{" "}
           {new Date(meta.date).toLocaleDateString("ru-RU")}
         </p>
-        <div className="prose prose-slate mt-8 max-w-none">
+        <div className="prose prose-slate mt-8 max-w-none break-words">
           <Mdx />
         </div>
       </article>

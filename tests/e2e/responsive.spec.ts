@@ -28,6 +28,7 @@ const ROUTES = [
   "/nalogovyy-vychet/",
   "/rassrochka-i-oplata/",
   "/blog/",
+  "/blog/chto-takoye-endodontiya-pod-mikroskopom/",
   "/otzyvy/",
   "/policy/",
   "/not-found",
