@@ -79,7 +79,7 @@ export function BookingForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
         <div>
           <div className="text-xs font-bold uppercase tracking-wider text-mint-600">
             Онлайн-запись
@@ -192,7 +192,7 @@ export function BookingForm({
                     className="mt-0.5 h-5 w-5 rounded-md data-checked:border-mint-500 data-checked:bg-mint-500"
                   />
                 </FormControl>
-                <FormLabel className="m-0 text-xs font-normal normal-case leading-relaxed tracking-normal text-muted-foreground">
+                <FormLabel className="m-0 flex-wrap text-xs font-normal normal-case leading-relaxed tracking-normal text-muted-foreground">
                   Я согласен на обработку персональных данных в соответствии с{" "}
                   <a
                     href="/policy/"

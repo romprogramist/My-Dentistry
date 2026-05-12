@@ -57,9 +57,11 @@ export function Header() {
               </a>
             </>
           ) : null}
-          <Link href="/zapis/" className={buttonVariants({ size: "sm" })}>
-            Записаться
-          </Link>
+          <div className="hidden md:block">
+            <Link href="/zapis/" className={buttonVariants({ size: "sm" })}>
+              Записаться
+            </Link>
+          </div>
           <MobileNav nav={NAV} />
         </div>
       </div>

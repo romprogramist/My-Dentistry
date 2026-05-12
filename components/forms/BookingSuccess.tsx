@@ -10,7 +10,7 @@ type Props = { onReset: () => void };
 export function BookingSuccess({ onReset }: Props) {
   const primaryPhone = CLINIC.phones[0];
   return (
-    <div className="flex min-h-[28rem] flex-col items-center justify-center px-4 py-10 text-center">
+    <div className="mx-auto flex min-h-[28rem] max-w-md flex-col items-center justify-center px-4 py-10 text-center">
       <div className="mb-5 flex h-[88px] w-[88px] items-center justify-center rounded-full bg-mint-500 text-white shadow-xl shadow-mint-500/40">
         <CheckCircle2 className="h-11 w-11" strokeWidth={2.2} />
       </div>

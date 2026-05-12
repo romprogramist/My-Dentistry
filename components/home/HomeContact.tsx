@@ -6,8 +6,8 @@ export function HomeContact() {
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
       <div className="rounded-2xl bg-mint-50 p-6 md:p-10">
-        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-          <div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+          <div className="min-w-0">
             <div className="text-xs font-bold uppercase tracking-wider text-mint-600">
               Контакты
             </div>
@@ -65,7 +65,7 @@ export function HomeContact() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-white p-6 shadow-sm md:p-8">
+          <div className="min-w-0 rounded-2xl bg-white p-6 shadow-sm md:p-8">
             <BookingForm />
           </div>
         </div>

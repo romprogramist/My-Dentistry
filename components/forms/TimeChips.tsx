@@ -87,7 +87,7 @@ function Chip({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "h-10 rounded-lg border-[1.5px] px-4 text-sm font-medium transition-colors",
+        "touch-target rounded-lg border-[1.5px] px-4 text-sm font-medium transition-colors",
         active
           ? "border-mint-500 bg-mint-500 font-semibold text-white"
           : "border-mint-200 text-mint-700 hover:bg-mint-50"
