@@ -22,7 +22,7 @@ export default function ServicesIndex() {
           Гарантия от 1 до 5 лет.
         </p>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-4 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {SERVICE_CATEGORIES.map((cat) => (
             <Card
               key={cat.slug}
