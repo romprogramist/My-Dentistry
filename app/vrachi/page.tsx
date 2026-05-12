@@ -29,7 +29,7 @@ export default function DoctorsIndex() {
       <Breadcrumbs items={[{ name: "Врачи", href: "/vrachi/" }]} />
       <section className="container mx-auto px-4 py-8 md:py-12">
         <h1 className="text-3xl font-bold md:text-4xl">Наши врачи</h1>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           {DOCTORS.map((d) => (
             <Card key={d.slug} className="overflow-hidden">
               <Link
