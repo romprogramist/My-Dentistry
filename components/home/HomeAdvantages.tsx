@@ -29,7 +29,7 @@ export function HomeAdvantages() {
       <h2 className="text-center text-2xl font-bold md:text-3xl">
         Почему выбирают нас
       </h2>
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         {ITEMS.map((item) => (
           <div key={item.title} className="rounded-lg border bg-white p-6">
             <item.icon className="h-10 w-10 text-brand-600" />

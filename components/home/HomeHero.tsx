@@ -8,12 +8,12 @@ export function HomeHero() {
   return (
     <section className="bg-gradient-to-br from-brand-50 to-white py-16 md:py-24">
       <div className="container mx-auto grid items-center gap-10 px-4 md:grid-cols-2">
-        <div>
-          <h1 className="text-3xl font-bold leading-tight md:text-5xl">
+        <div className="order-2 md:order-1">
+          <h1 className="text-3xl font-bold leading-tight xs:text-4xl md:text-5xl">
             Стоматология полного цикла
             <br />в центре Сочи
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+          <p className="mt-4 text-base text-muted-foreground xs:text-lg md:text-xl">
             Безболезненное лечение, протезирование и имплантация. Своя
             зуботехническая база. Гарантия до 5 лет.
           </p>
@@ -29,7 +29,7 @@ export function HomeHero() {
             </span>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
             <Link
               href="/zapis/"
               className={buttonVariants({ size: "lg" })}
@@ -45,7 +45,7 @@ export function HomeHero() {
           </div>
         </div>
 
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 md:aspect-square">
+        <div className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 md:order-2 md:aspect-square">
           <Image
             src="/media/clinic/reception-detail.webp"
             alt="Приёмная клиники «Моя Стоматология» — Сочи, Донская 52"

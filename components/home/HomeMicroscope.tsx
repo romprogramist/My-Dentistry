@@ -5,7 +5,7 @@ import { VideoPlayer } from "@/components/blocks/VideoPlayer";
 export function HomeMicroscope() {
   return (
     <section className="bg-brand-50 py-12 md:py-16">
-      <div className="container mx-auto grid items-center gap-10 px-4 md:grid-cols-2">
+      <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 md:grid-cols-2">
         <div>
           <span className="inline-block rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white">
             УНИКАЛЬНОЕ В СОЧИ

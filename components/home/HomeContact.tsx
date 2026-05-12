@@ -54,15 +54,15 @@ export function HomeContact() {
               </div>
             </div>
 
-            <iframe
-              src={`https://yandex.ru/map-widget/v1/?ll=${CLINIC.geo.longitude}%2C${CLINIC.geo.latitude}&z=17&pt=${CLINIC.geo.longitude},${CLINIC.geo.latitude}`}
-              width="100%"
-              height="320"
-              allowFullScreen
-              loading="lazy"
-              title="Карта проезда"
-              className="mt-6 rounded-xl"
-            />
+            <div className="relative mt-6 aspect-[4/3] max-h-[280px] overflow-hidden rounded-xl md:aspect-auto md:h-[420px] md:max-h-[420px]">
+              <iframe
+                src={`https://yandex.ru/map-widget/v1/?ll=${CLINIC.geo.longitude}%2C${CLINIC.geo.latitude}&z=17&pt=${CLINIC.geo.longitude},${CLINIC.geo.latitude}`}
+                allowFullScreen
+                loading="lazy"
+                title="Карта проезда"
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
           </div>
 
           <div className="rounded-2xl bg-white p-6 shadow-sm md:p-8">

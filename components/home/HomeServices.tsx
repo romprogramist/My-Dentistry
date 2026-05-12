@@ -23,17 +23,17 @@ export function HomeServices() {
             Все услуги <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-4 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {FEATURED_SERVICES.map((s) => (
             <Card
               key={s.slug}
-              className="p-5 transition-shadow hover:shadow-md"
+              className="flex flex-col p-5 transition-shadow hover:shadow-md"
             >
               <h3 className="text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 {s.description}
               </p>
-              <div className="mt-4 flex items-center justify-between">
+              <div className="mt-auto pt-4 flex items-center justify-between">
                 <span className="font-semibold text-brand-700">
                   {priceLabel(s)}
                 </span>
