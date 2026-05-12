@@ -8,7 +8,7 @@ export function HomeContact() {
       <div className="rounded-2xl bg-mint-50 p-6 md:p-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           <div className="min-w-0">
-            <div className="text-xs font-bold uppercase tracking-wider text-mint-600">
+            <div className="text-xs font-bold uppercase tracking-wider text-mint-700">
               Контакты
             </div>
             <h2 className="mt-1 text-2xl font-bold text-mint-900 md:text-3xl">
@@ -33,7 +33,7 @@ export function HomeContact() {
                     <a
                       key={p.tel}
                       href={`tel:${p.tel}`}
-                      className="block text-sm hover:text-mint-700"
+                      className="flex min-h-11 items-center text-sm hover:text-mint-700"
                     >
                       {p.display}
                     </a>

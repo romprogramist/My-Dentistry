@@ -118,7 +118,7 @@ export function Footer() {
               <a
                 key={p.tel}
                 href={`tel:${p.tel}`}
-                className="block hover:text-brand-600"
+                className="flex min-h-11 items-center hover:text-brand-600"
               >
                 {p.display}
               </a>

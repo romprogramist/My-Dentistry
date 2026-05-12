@@ -81,12 +81,12 @@ export function BookingForm({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
         <div>
-          <div className="text-xs font-bold uppercase tracking-wider text-mint-600">
+          <div className="text-xs font-bold uppercase tracking-wider text-mint-700">
             Онлайн-запись
           </div>
-          <h3 className="mt-1 text-2xl font-bold text-mint-900">
+          <h2 className="mt-1 text-2xl font-bold text-mint-900">
             Записаться на приём
-          </h3>
+          </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             Перезвоним в течение часа в рабочее время
           </p>
@@ -196,7 +196,7 @@ export function BookingForm({
                   Я согласен на обработку персональных данных в соответствии с{" "}
                   <a
                     href="/policy/"
-                    className="text-mint-600 underline hover:text-mint-700"
+                    className="text-mint-700 underline hover:text-mint-900"
                   >
                     политикой конфиденциальности
                   </a>
@@ -229,7 +229,7 @@ export function BookingForm({
         <Button
           type="submit"
           disabled={status === "submitting"}
-          className="h-[52px] w-full rounded-lg bg-mint-500 text-base font-semibold text-white shadow-lg shadow-mint-500/30 hover:bg-mint-700"
+          className="h-[52px] w-full rounded-lg bg-mint-700 text-base font-semibold text-white shadow-lg shadow-mint-500/30 hover:bg-mint-900"
         >
           {status === "submitting" ? (
             <>
