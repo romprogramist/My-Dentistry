@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -45,15 +46,13 @@ export function HomeHero() {
         </div>
 
         <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200 md:aspect-square">
-          <img
+          <Image
             src="/media/clinic/reception-detail.webp"
             alt="Приёмная клиники «Моя Стоматология» — Сочи, Донская 52"
-            width={1200}
-            height={1600}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="h-full w-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+            className="object-cover"
           />
         </div>
       </div>
