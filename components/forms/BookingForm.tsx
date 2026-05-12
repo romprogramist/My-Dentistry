@@ -228,8 +228,9 @@ export function BookingForm({
 
         <Button
           type="submit"
+          size="lg"
           disabled={status === "submitting"}
-          className="h-[52px] w-full rounded-lg bg-mint-700 text-base font-semibold text-white shadow-lg shadow-mint-500/30 hover:bg-mint-900"
+          className="w-full"
         >
           {status === "submitting" ? (
             <>
