@@ -100,7 +100,7 @@ export default function EndodontiyaPodMikroskopomPage() {
         <div className="mt-4">
           <Link href="/zapis/" className={buttonVariants({ size: "lg" })}>
             Записаться на консультацию
-            <ArrowRight className="ml-1 size-5 transition-transform duration-200 ease-out group-hover/button:translate-x-1" />
+            <ArrowRight className="ml-1 hidden size-5 transition-transform duration-200 ease-out group-hover/button:translate-x-1 xs:inline-block" />
           </Link>
         </div>
 
