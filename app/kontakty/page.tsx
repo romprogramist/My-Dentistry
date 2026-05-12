@@ -16,8 +16,8 @@ export default function ContactsPage() {
       <Breadcrumbs items={[{ name: "Контакты", href: "/kontakty/" }]} />
       <section className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold md:text-4xl">Контакты</h1>
-        <div className="mt-8 grid gap-8 md:grid-cols-[1fr_400px]">
-          <div className="space-y-4">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-[1fr_400px]">
+          <div className="min-w-0 space-y-4">
             <div className="flex gap-3">
               <MapPin className="h-5 w-5 text-brand-600" />
               <div>
@@ -48,17 +48,17 @@ export default function ContactsPage() {
                 <p className="text-muted-foreground">{CLINIC.hours.weekend}</p>
               </div>
             </div>
-            <iframe
-              src={`https://yandex.ru/map-widget/v1/?ll=${CLINIC.geo.longitude}%2C${CLINIC.geo.latitude}&z=17&pt=${CLINIC.geo.longitude},${CLINIC.geo.latitude}`}
-              width="100%"
-              height="400"
-              loading="lazy"
-              title="Карта проезда"
-              className="rounded-lg"
-            />
+            <div className="relative aspect-[4/3] max-h-[280px] overflow-hidden rounded-lg md:aspect-auto md:h-[480px] md:max-h-[480px]">
+              <iframe
+                src={`https://yandex.ru/map-widget/v1/?ll=${CLINIC.geo.longitude}%2C${CLINIC.geo.latitude}&z=17&pt=${CLINIC.geo.longitude},${CLINIC.geo.latitude}`}
+                loading="lazy"
+                title="Карта проезда"
+                className="absolute inset-0 h-full w-full"
+              />
+            </div>
           </div>
 
-          <aside className="rounded-lg border bg-slate-50 p-6">
+          <aside className="min-w-0 rounded-lg border bg-slate-50 p-6">
             <h2 className="text-xl font-bold">Записаться на приём</h2>
             <div className="mt-4">
               <BookingForm />
