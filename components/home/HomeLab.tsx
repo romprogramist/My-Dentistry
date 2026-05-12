@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -5,15 +6,14 @@ export function HomeLab() {
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
       <div className="grid items-center gap-10 md:grid-cols-2">
-        <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200">
-          <img
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-slate-200">
+          <Image
             src="/media/clinic/reception-wide.webp"
             alt="Интерьер клиники «Моя Стоматология»"
-            width={1600}
-            height={1200}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover"
+            className="object-cover"
           />
         </div>
         <div>
