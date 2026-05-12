@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
 
@@ -27,6 +27,7 @@ export function MobileStickyCTA() {
         className={buttonVariants({ className: "flex-1 min-h-11" })}
       >
         Записаться
+        <ArrowRight className="ml-1 size-4 transition-transform duration-200 ease-out group-hover/button:translate-x-1" />
       </Link>
     </div>
   );
