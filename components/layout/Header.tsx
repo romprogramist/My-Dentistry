@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
 import { MobileNav } from "./MobileNav";
@@ -58,8 +58,9 @@ export function Header() {
             </>
           ) : null}
           <div className="hidden md:block">
-            <Link href="/zapis/" className={buttonVariants({ size: "sm" })}>
+            <Link href="/zapis/" className={buttonVariants()}>
               Записаться
+              <ArrowRight className="ml-1 size-4 transition-transform duration-200 ease-out group-hover/button:translate-x-1" />
             </Link>
           </div>
           <MobileNav nav={NAV} />
