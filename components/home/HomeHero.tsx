@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
 
@@ -35,6 +35,7 @@ export function HomeHero() {
               className={buttonVariants({ size: "lg" })}
             >
               Записаться на приём
+              <ArrowRight className="ml-1 size-5 transition-transform duration-200 ease-out group-hover/button:translate-x-1" />
             </Link>
             <Link
               href="/uslugi/"
