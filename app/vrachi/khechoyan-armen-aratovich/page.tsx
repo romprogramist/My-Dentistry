@@ -32,8 +32,8 @@ export default function DoctorPage() {
       />
 
       <article className="container mx-auto px-4 py-8">
-        <div className="grid gap-8 md:grid-cols-[280px_1fr]">
-          <div className="aspect-[3/4] rounded-2xl bg-slate-200">
+        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[1fr_2fr]">
+          <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-slate-200">
             <div className="flex h-full items-center justify-center text-muted-foreground">
               Фото врача
             </div>
