@@ -155,7 +155,8 @@ export default function ImplantaciyaPage() {
 
         <h2 className="mt-12 text-2xl font-bold">Цены</h2>
         <Card className="mt-4 overflow-hidden">
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[480px] text-sm">
             <thead className="bg-slate-100">
               <tr>
                 <th className="p-3 text-left">Услуга</th>
@@ -192,7 +193,8 @@ export default function ImplantaciyaPage() {
                 <td className="p-3 text-right font-semibold">35 000 ₽</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
         </Card>
       </article>
 

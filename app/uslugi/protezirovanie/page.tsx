@@ -170,7 +170,8 @@ export default function ProtezirovaniePage() {
 
         <h2 className="mt-12 text-2xl font-bold">Цены</h2>
         <Card className="mt-4 overflow-hidden">
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[480px] text-sm">
             <thead className="bg-slate-100">
               <tr>
                 <th className="p-3 text-left">Услуга</th>
@@ -205,7 +206,8 @@ export default function ProtezirovaniePage() {
                 <td className="p-3 text-right font-semibold">от 25 000 ₽</td>
               </tr>
             </tbody>
-          </table>
+            </table>
+          </div>
         </Card>
       </article>
 
