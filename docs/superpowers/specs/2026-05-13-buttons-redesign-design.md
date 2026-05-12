@@ -50,7 +50,12 @@ Calibration: **Balanced** — visible but not loud. Marketing-CTA standard sizin
 | `default` | `h-11` (44px) | `px-5` | `rounded-xl` | `text-sm font-semibold` | header, mobile sticky, inline CTAs |
 | `lg` | `h-14` (56px) | `px-7` | `rounded-xl` | `text-base font-semibold` | hero CTAs, page-bottom CTA, form submit |
 | `sm` | `h-9` (36px) | `px-3.5` | `rounded-lg` | `text-sm font-semibold` | dialog/sheet actions |
-| `xs`, `icon*` | unchanged | — | — | — | utility |
+| `icon` | `size-11` (44px) | — | `rounded-xl` | — | square button matched to `default` (e.g. MobileNav burger) |
+| `icon-sm` | `size-9` (36px) | — | `rounded-lg` | — | square button matched to `sm` (e.g. modal close) |
+| `icon-lg` | `size-14` (56px) | — | `rounded-xl` | — | square button matched to `lg` |
+| `xs`, `icon-xs` | unchanged | — | — | — | utility, badge-scale |
+
+**Note (amended 2026-05-13):** `icon`, `icon-sm`, `icon-lg` were originally listed as "unchanged" but had to scale alongside `default`/`sm`/`lg` to keep visual proportion and to lift the MobileNav burger to the WCAG 2.5.5 44×44 touch-target. `icon-xs` and `xs` remain unchanged.
 
 ### Motion
 
@@ -147,4 +152,5 @@ Sequential, in this order:
 - `BookingForm` submit uses `size="lg"` only (no bespoke height/bg/shadow classes)
 - "Записаться" CTAs on Hero, Header, MobileStickyCTA, and all 11 service-page bottoms render with arrow icon that slides on hover
 - `default` and `outline` variants use the gradient/mint spec above
-- `secondary`, `destructive`, `link`, `icon*` variants visually unchanged
+- `secondary`, `destructive`, `link` variants visually unchanged
+- `icon`, `icon-sm`, `icon-lg` rescaled to match new default/sm/lg sizes (see amended Sizes table); `xs` and `icon-xs` unchanged
