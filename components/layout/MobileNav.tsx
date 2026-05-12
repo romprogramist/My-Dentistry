@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
+import { CLINIC } from "@/lib/constants/clinic";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
@@ -27,17 +28,26 @@ export function MobileNav({ nav }: { nav: readonly NavItem[] }) {
       </SheetTrigger>
       <SheetContent side="right" className="w-[280px]">
         <SheetTitle className="sr-only">Меню навигации</SheetTitle>
-        <nav className="mt-8 flex flex-col gap-4 px-4">
+        <nav className="mt-8 flex flex-col gap-1 px-4">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-base font-medium hover:text-brand-600"
+              className="touch-target justify-start text-base font-medium hover:text-brand-600"
             >
               {item.label}
             </Link>
           ))}
         </nav>
+        {CLINIC.phones[0] ? (
+          <a
+            href={`tel:${CLINIC.phones[0].tel}`}
+            className="mx-4 mt-6 touch-target justify-start gap-2 rounded-md border px-3 text-sm font-semibold text-brand-700"
+          >
+            <Phone className="h-4 w-4" />
+            {CLINIC.phones[0].display}
+          </a>
+        ) : null}
       </SheetContent>
     </Sheet>
   );
