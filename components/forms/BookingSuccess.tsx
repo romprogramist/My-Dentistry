@@ -3,7 +3,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
-import { cn } from "@/lib/utils";
 
 type Props = { onReset: () => void };
 
@@ -24,18 +23,16 @@ export function BookingSuccess({ onReset }: Props) {
       <div className="mt-7 flex w-full max-w-xs flex-col gap-2.5">
         <a
           href={`tel:${primaryPhone.tel}`}
-          className={cn(
-            buttonVariants({ variant: "default" }),
-            "h-12 rounded-lg bg-mint-500 font-semibold text-white shadow-md shadow-mint-500/30 hover:bg-mint-700"
-          )}
+          className={buttonVariants({ size: "lg", className: "w-full" })}
         >
           Позвонить {primaryPhone.display}
         </a>
         <Button
           type="button"
           variant="outline"
+          size="lg"
           onClick={onReset}
-          className="h-12 rounded-lg border-[1.5px] border-mint-200 font-semibold text-mint-700 hover:bg-mint-50"
+          className="w-full"
         >
           Записаться ещё раз
         </Button>
