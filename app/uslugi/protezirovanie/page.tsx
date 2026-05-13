@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQ } from "@/components/blocks/FAQ";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
-import { ArrowRight } from "lucide-react";
 
 const SLUG = "protezirovanie";
 const TITLE = "Протезирование зубов";
@@ -105,12 +104,21 @@ export default function ProtezirovaniePage() {
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Что мы делаем</h2>
-        <ul className="mt-4 space-y-2">
-          <li>✓ Коронки — металлокерамика, цирконий, E.max</li>
-          <li>✓ Виниры E.max и композитные</li>
-          <li>✓ Мосты на 2–3 единицы</li>
-          <li>✓ Съёмные и бюгельные протезы</li>
-          <li>✓ Протезы на имплантах (all-on-4 / all-on-6)</li>
+        <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+          {[
+            "Коронки — металлокерамика, цирконий, E.max",
+            "Виниры E.max и композитные",
+            "Мосты на 2–3 единицы",
+            "Съёмные и бюгельные протезы",
+            "Протезы на имплантах (all-on-4 / all-on-6)",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-foreground/5 shadow-soft">
+              <span aria-hidden="true" className="mt-0.5 inline-flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-mint-50 text-mint-700 ring-1 ring-mint-100">
+                <Check className="size-3.5" strokeWidth={2.5} />
+              </span>
+              <span className="text-[15px] text-ink-700">{item}</span>
+            </li>
+          ))}
         </ul>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Этапы лечения</h2>
@@ -148,76 +156,63 @@ export default function ProtezirovaniePage() {
         </ol>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Виды протезирования</h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <Card className="p-5 transition-shadow hover:shadow-md">
-            <h3 className="text-lg font-semibold">Циркониевые коронки</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Прочные, биосовместимые, без металла. Срок службы 15–20 лет.
+        <div className="mt-7 grid gap-5 sm:grid-cols-2">
+          <Link
+            href="/uslugi/protezirovanie/koronki-cirkoniy/"
+            className="group relative flex flex-col rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <h3 className="font-display text-xl font-medium leading-snug text-ink-900">Циркониевые коронки</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+              Прочные, биосовместимые, без металла. Срок службы 15–20&nbsp;лет.
             </p>
-            <p className="mt-2 font-semibold text-brand-700">от 20 000 ₽</p>
-            <Link
-              href="/uslugi/protezirovanie/koronki-cirkoniy/"
-              className="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline"
-            >
+            <p className="mt-4 font-display text-xl font-medium text-brand-700">от&nbsp;20 000&nbsp;₽</p>
+            <span className="mt-3 inline-block text-sm font-semibold text-brand-700">
               Подробнее →
-            </Link>
-          </Card>
-          <Card className="p-5 transition-shadow hover:shadow-md">
-            <h3 className="text-lg font-semibold">Виниры E.max</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Тонкие керамические накладки для голливудской улыбки. Не темнеют.
+            </span>
+          </Link>
+          <Link
+            href="/uslugi/protezirovanie/viniry/"
+            className="group relative flex flex-col rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <h3 className="font-display text-xl font-medium leading-snug text-ink-900">Виниры E.max</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+              Тонкие керамические накладки для голливудской улыбки. Не&nbsp;темнеют.
             </p>
-            <p className="mt-2 font-semibold text-brand-700">от 25 000 ₽</p>
-            <Link
-              href="/uslugi/protezirovanie/viniry/"
-              className="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline"
-            >
+            <p className="mt-4 font-display text-xl font-medium text-brand-700">от&nbsp;25 000&nbsp;₽</p>
+            <span className="mt-3 inline-block text-sm font-semibold text-brand-700">
               Подробнее →
-            </Link>
-          </Card>
+            </span>
+          </Link>
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Цены</h2>
-        <Card className="mt-4 overflow-hidden">
+        <div className="mt-7 overflow-hidden rounded-2xl bg-white ring-1 ring-foreground/5 shadow-soft">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="p-3 text-left">Услуга</th>
-                <th className="p-3 text-right">Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t">
-                <td className="p-3">Циркониевая коронка</td>
-                <td className="p-3 text-right font-semibold">
-                  20 000–22 000 ₽
-                </td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Металлокерамическая коронка</td>
-                <td className="p-3 text-right font-semibold">12 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Коронка E.max</td>
-                <td className="p-3 text-right font-semibold">25 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Винир E.max</td>
-                <td className="p-3 text-right font-semibold">25 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Мост (за единицу)</td>
-                <td className="p-3 text-right font-semibold">от 12 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Съёмный протез</td>
-                <td className="p-3 text-right font-semibold">от 25 000 ₽</td>
-              </tr>
-            </tbody>
+              <thead className="bg-gradient-to-br from-brand-50/80 to-mint-50/80">
+                <tr>
+                  <th className="p-4 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">Услуга</th>
+                  <th className="p-4 text-right text-xs font-medium uppercase tracking-wider text-muted-foreground">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ["Циркониевая коронка", "20 000–22 000 ₽"],
+                  ["Металлокерамическая коронка", "12 000 ₽"],
+                  ["Коронка E.max", "25 000 ₽"],
+                  ["Винир E.max", "25 000 ₽"],
+                  ["Мост (за единицу)", "от 12 000 ₽"],
+                  ["Съёмный протез", "от 25 000 ₽"],
+                ] as const).map(([label, price], i) => (
+                  <tr key={label} className={i > 0 ? "border-t border-foreground/5" : ""}>
+                    <td className="p-4 text-[15px] text-ink-700">{label}</td>
+                    <td className="p-4 text-right font-display text-lg font-medium text-ink-900">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
-        </Card>
+        </div>
       </article>
 
       <FAQ items={FAQ_ITEMS} />

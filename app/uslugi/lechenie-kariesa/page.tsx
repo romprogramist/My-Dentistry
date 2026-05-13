@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQ } from "@/components/blocks/FAQ";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
-import { ArrowRight } from "lucide-react";
 
 const SLUG = "lechenie-kariesa";
 const TITLE = "Лечение кариеса";
@@ -106,11 +105,20 @@ export default function LechenieKariesaPage() {
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Стадии кариеса</h2>
-        <ul className="mt-4 space-y-2">
-          <li>✓ Пятно — без лечения, проводится реминерализация</li>
-          <li>✓ Поверхностный — затрагивает эмаль</li>
-          <li>✓ Средний — доходит до дентина</li>
-          <li>✓ Глубокий — близко к нерву (пульпе)</li>
+        <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+          {[
+            "Пятно — без лечения, проводится реминерализация",
+            "Поверхностный — затрагивает эмаль",
+            "Средний — доходит до дентина",
+            "Глубокий — близко к нерву (пульпе)",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-foreground/5 shadow-soft">
+              <span aria-hidden="true" className="mt-0.5 inline-flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-mint-50 text-mint-700 ring-1 ring-mint-100">
+                <Check className="size-3.5" strokeWidth={2.5} />
+              </span>
+              <span className="text-[15px] text-ink-700">{item}</span>
+            </li>
+          ))}
         </ul>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Этапы лечения</h2>
@@ -148,36 +156,31 @@ export default function LechenieKariesaPage() {
         </ol>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Цены</h2>
-        <Card className="mt-4 overflow-hidden">
+        <div className="mt-7 overflow-hidden rounded-2xl bg-white ring-1 ring-foreground/5 shadow-soft">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="p-3 text-left">Услуга</th>
-                <th className="p-3 text-right">Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t">
-                <td className="p-3">Кариес — поверхностный</td>
-                <td className="p-3 text-right font-semibold">4 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Кариес — средний</td>
-                <td className="p-3 text-right font-semibold">5 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Кариес — глубокий</td>
-                <td className="p-3 text-right font-semibold">6 000–7 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Реминерализация (1 зуб)</td>
-                <td className="p-3 text-right font-semibold">1 500 ₽</td>
-              </tr>
-            </tbody>
+              <thead className="bg-gradient-to-br from-brand-50/80 to-mint-50/80">
+                <tr>
+                  <th className="p-4 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">Услуга</th>
+                  <th className="p-4 text-right text-xs font-medium uppercase tracking-wider text-muted-foreground">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ["Кариес — поверхностный", "4 000 ₽"],
+                  ["Кариес — средний", "5 000 ₽"],
+                  ["Кариес — глубокий", "6 000–7 000 ₽"],
+                  ["Реминерализация (1 зуб)", "1 500 ₽"],
+                ] as const).map(([label, price], i) => (
+                  <tr key={label} className={i > 0 ? "border-t border-foreground/5" : ""}>
+                    <td className="p-4 text-[15px] text-ink-700">{label}</td>
+                    <td className="p-4 text-right font-display text-lg font-medium text-ink-900">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
-        </Card>
+        </div>
       </article>
 
       <FAQ items={FAQ_ITEMS} />

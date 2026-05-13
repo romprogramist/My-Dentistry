@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQ } from "@/components/blocks/FAQ";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
-import { ArrowRight } from "lucide-react";
 
 const SLUG = "khirurgiya";
 const TITLE = "Хирургическая стоматология";
@@ -105,13 +104,22 @@ export default function KhirurgiyaPage() {
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Что мы делаем</h2>
-        <ul className="mt-4 space-y-2">
-          <li>✓ Удаление зубов любой сложности</li>
-          <li>✓ Удаление зубов мудрости (восьмёрок)</li>
-          <li>✓ Удаление корней</li>
-          <li>✓ Цистэктомия — удаление кисты</li>
-          <li>✓ Резекция верхушки корня</li>
-          <li>✓ Костная пластика и синус-лифтинг</li>
+        <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+          {[
+            "Удаление зубов любой сложности",
+            "Удаление зубов мудрости (восьмёрок)",
+            "Удаление корней",
+            "Цистэктомия — удаление кисты",
+            "Резекция верхушки корня",
+            "Костная пластика и синус-лифтинг",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-foreground/5 shadow-soft">
+              <span aria-hidden="true" className="mt-0.5 inline-flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-mint-50 text-mint-700 ring-1 ring-mint-100">
+                <Check className="size-3.5" strokeWidth={2.5} />
+              </span>
+              <span className="text-[15px] text-ink-700">{item}</span>
+            </li>
+          ))}
         </ul>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Этапы операции</h2>
@@ -148,79 +156,63 @@ export default function KhirurgiyaPage() {
         </ol>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Виды операций</h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <Card className="p-5 transition-shadow hover:shadow-md">
-            <h3 className="text-lg font-semibold">Удаление зуба мудрости</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Простое и сложное удаление, в т.ч. ретенированных и
-              дистопированных «восьмёрок».
+        <div className="mt-7 grid gap-5 sm:grid-cols-2">
+          <Link
+            href="/uslugi/khirurgiya/udalenie-zuba-mudrosti/"
+            className="group relative flex flex-col rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <h3 className="font-display text-xl font-medium leading-snug text-ink-900">Удаление зуба мудрости</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+              Простое и сложное удаление, в&nbsp;т.ч. ретенированных
+              и&nbsp;дистопированных «восьмёрок».
             </p>
-            <p className="mt-2 font-semibold text-brand-700">5 000–10 000 ₽</p>
-            <Link
-              href="/uslugi/khirurgiya/udalenie-zuba-mudrosti/"
-              className="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline"
-            >
+            <p className="mt-4 font-display text-xl font-medium text-brand-700">5 000–10 000&nbsp;₽</p>
+            <span className="mt-3 inline-block text-sm font-semibold text-brand-700">
               Подробнее →
-            </Link>
-          </Card>
-          <Card className="p-5">
-            <h3 className="text-lg font-semibold">Удаление корня</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+            </span>
+          </Link>
+          <div className="flex flex-col rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft">
+            <h3 className="font-display text-xl font-medium leading-snug text-ink-900">Удаление корня</h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
               Удаление корня разрушенного зуба или оставшегося после неудачного
               предыдущего удаления.
             </p>
-            <p className="mt-2 font-semibold text-brand-700">от 3 000 ₽</p>
+            <p className="mt-4 font-display text-xl font-medium text-brand-700">от&nbsp;3 000&nbsp;₽</p>
             <p className="mt-3 text-sm text-muted-foreground">
-              Запишитесь на консультацию для оценки сложности.
+              Запишитесь на&nbsp;консультацию для оценки сложности.
             </p>
-          </Card>
+          </div>
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Цены</h2>
-        <Card className="mt-4 overflow-hidden">
+        <div className="mt-7 overflow-hidden rounded-2xl bg-white ring-1 ring-foreground/5 shadow-soft">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="p-3 text-left">Услуга</th>
-                <th className="p-3 text-right">Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t">
-                <td className="p-3">Удаление простое</td>
-                <td className="p-3 text-right font-semibold">3 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Удаление сложное</td>
-                <td className="p-3 text-right font-semibold">5 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Зуб мудрости — простое удаление</td>
-                <td className="p-3 text-right font-semibold">5 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">
-                  Зуб мудрости — сложное удаление (ретенированный)
-                </td>
-                <td className="p-3 text-right font-semibold">8 000–10 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Удаление корня</td>
-                <td className="p-3 text-right font-semibold">от 3 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Цистэктомия</td>
-                <td className="p-3 text-right font-semibold">от 7 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Резекция верхушки корня</td>
-                <td className="p-3 text-right font-semibold">от 8 000 ₽</td>
-              </tr>
-            </tbody>
+              <thead className="bg-gradient-to-br from-brand-50/80 to-mint-50/80">
+                <tr>
+                  <th className="p-4 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">Услуга</th>
+                  <th className="p-4 text-right text-xs font-medium uppercase tracking-wider text-muted-foreground">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ["Удаление простое", "3 000 ₽"],
+                  ["Удаление сложное", "5 000 ₽"],
+                  ["Зуб мудрости — простое удаление", "5 000 ₽"],
+                  ["Зуб мудрости — сложное удаление (ретенированный)", "8 000–10 000 ₽"],
+                  ["Удаление корня", "от 3 000 ₽"],
+                  ["Цистэктомия", "от 7 000 ₽"],
+                  ["Резекция верхушки корня", "от 8 000 ₽"],
+                ] as const).map(([label, price], i) => (
+                  <tr key={label} className={i > 0 ? "border-t border-foreground/5" : ""}>
+                    <td className="p-4 text-[15px] text-ink-700">{label}</td>
+                    <td className="p-4 text-right font-display text-lg font-medium text-ink-900">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
-        </Card>
+        </div>
       </article>
 
       <FAQ items={FAQ_ITEMS} />

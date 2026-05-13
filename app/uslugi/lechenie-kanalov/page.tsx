@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQ } from "@/components/blocks/FAQ";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { buttonVariants } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
-import { ArrowRight } from "lucide-react";
 
 const SLUG = "lechenie-kanalov";
 const TITLE = "Лечение каналов (пульпит, периодонтит)";
@@ -106,12 +105,21 @@ export default function LechenieKanalovPage() {
         </div>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Когда нужно лечение каналов</h2>
-        <ul className="mt-4 space-y-2">
-          <li>✓ Пульпит — острая зубная боль</li>
-          <li>✓ Периодонтит — воспаление на верхушке корня</li>
-          <li>✓ Гнойный процесс на корне (свищ, флюс)</li>
-          <li>✓ Подготовка зуба под коронку</li>
-          <li>✓ Глубокий кариес с возможным затрагиванием пульпы</li>
+        <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+          {[
+            "Пульпит — острая зубная боль",
+            "Периодонтит — воспаление на верхушке корня",
+            "Гнойный процесс на корне (свищ, флюс)",
+            "Подготовка зуба под коронку",
+            "Глубокий кариес с возможным затрагиванием пульпы",
+          ].map((item) => (
+            <li key={item} className="flex gap-3 rounded-2xl bg-white p-4 ring-1 ring-foreground/5 shadow-soft">
+              <span aria-hidden="true" className="mt-0.5 inline-flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-mint-50 text-mint-700 ring-1 ring-mint-100">
+                <Check className="size-3.5" strokeWidth={2.5} />
+              </span>
+              <span className="text-[15px] text-ink-700">{item}</span>
+            </li>
+          ))}
         </ul>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Этапы лечения</h2>
@@ -153,40 +161,32 @@ export default function LechenieKanalovPage() {
         </ol>
 
         <h2 className="mt-16 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">Цены</h2>
-        <Card className="mt-4 overflow-hidden">
+        <div className="mt-7 overflow-hidden rounded-2xl bg-white ring-1 ring-foreground/5 shadow-soft">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[480px] text-sm">
-            <thead className="bg-slate-100">
-              <tr>
-                <th className="p-3 text-left">Услуга</th>
-                <th className="p-3 text-right">Цена</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-t">
-                <td className="p-3">1-канальный зуб (резец)</td>
-                <td className="p-3 text-right font-semibold">5 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">2-канальный (премоляр)</td>
-                <td className="p-3 text-right font-semibold">6 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">3-канальный (моляр)</td>
-                <td className="p-3 text-right font-semibold">7 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Под микроскопом — за канал</td>
-                <td className="p-3 text-right font-semibold">от 7 000 ₽</td>
-              </tr>
-              <tr className="border-t">
-                <td className="p-3">Контрольный снимок</td>
-                <td className="p-3 text-right font-semibold">500 ₽</td>
-              </tr>
-            </tbody>
+              <thead className="bg-gradient-to-br from-brand-50/80 to-mint-50/80">
+                <tr>
+                  <th className="p-4 text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">Услуга</th>
+                  <th className="p-4 text-right text-xs font-medium uppercase tracking-wider text-muted-foreground">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ["1-канальный зуб (резец)", "5 000 ₽"],
+                  ["2-канальный (премоляр)", "6 000 ₽"],
+                  ["3-канальный (моляр)", "7 000 ₽"],
+                  ["Под микроскопом — за канал", "от 7 000 ₽"],
+                  ["Контрольный снимок", "500 ₽"],
+                ] as const).map(([label, price], i) => (
+                  <tr key={label} className={i > 0 ? "border-t border-foreground/5" : ""}>
+                    <td className="p-4 text-[15px] text-ink-700">{label}</td>
+                    <td className="p-4 text-right font-display text-lg font-medium text-ink-900">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
-        </Card>
+        </div>
       </article>
 
       <FAQ items={FAQ_ITEMS} />
