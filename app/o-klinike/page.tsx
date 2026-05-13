@@ -10,130 +10,173 @@ export const metadata = createPageMetadata({
   path: "/o-klinike/",
 });
 
+const PRINCIPLES = [
+  {
+    title: "Безболезненность",
+    text: "Современная анестезия и индивидуальный подбор препаратов. Это самое частое слово в наших отзывах.",
+  },
+  {
+    title: "Полный цикл лечения",
+    text: "Терапия, хирургия, ортопедия, имплантация — всё в одной клинике, без отправки пациента «по другим адресам».",
+  },
+  {
+    title: "Своя зуботехническая база",
+    text: "Эксклюзивный зубной техник делает коронки и протезы за 5–10 дней.",
+  },
+  {
+    title: "Прозрачные цены",
+    text: "Полный прайс — на сайте, рассрочка от Т-Банка, помощь с налоговым вычетом 13%.",
+  },
+  {
+    title: "Гарантия 1–5 лет",
+    text: "На все типы работ — официальная гарантия и сервисное наблюдение.",
+  },
+];
+
 export default function AboutPage() {
   const yearsActive = new Date().getFullYear() - CLINIC.founded;
   return (
-    <>
+    <div className="bg-ivory-gradient">
       <Breadcrumbs items={[{ name: "О клинике", href: "/o-klinike/" }]} />
-      <article className="container mx-auto max-w-3xl px-4 py-8">
-        <h1 className="text-3xl font-bold md:text-4xl">О клинике</h1>
-        <p className="mt-6 text-lg text-muted-foreground">
-          {CLINIC.name} — стоматологическая клиника полного цикла в Центральном
-          районе Сочи на улице Донская, 52. Работаем с {CLINIC.founded} года —{" "}
-          {yearsActive} лет с момента открытия.
-        </p>
+      <article className="container mx-auto max-w-4xl px-4 py-10 md:py-16">
+        <div>
+          <span className="inline-block text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
+            О клинике
+          </span>
+          <h1 className="mt-3 font-display text-balance text-4xl font-medium leading-[1.05] text-ink-900 md:text-5xl lg:text-[3.4rem]">
+            Клиника, к&nbsp;которой возвращаются
+          </h1>
+          <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+            {CLINIC.name} — стоматологическая клиника полного цикла
+            в&nbsp;Центральном районе Сочи на&nbsp;улице Донская, 52.
+            Работаем с&nbsp;{CLINIC.founded}&nbsp;года — {yearsActive}&nbsp;лет
+            с&nbsp;момента открытия.
+          </p>
+        </div>
 
-        <h2 className="mt-12 text-2xl font-bold">Наши принципы</h2>
-        <ul className="mt-4 space-y-3">
-          <li>
-            <strong>Безболезненность.</strong> Современная анестезия и
-            индивидуальный подбор препаратов. Это самое частое слово в наших
-            отзывах.
-          </li>
-          <li>
-            <strong>Полный цикл лечения.</strong> Терапия, хирургия, ортопедия,
-            имплантация — всё в одной клинике, без отправки пациента «по другим
-            адресам».
-          </li>
-          <li>
-            <strong>Своя зуботехническая база.</strong> Эксклюзивный зубной
-            техник делает коронки и протезы за 5–10 дней.
-          </li>
-          <li>
-            <strong>Прозрачные цены.</strong> Полный прайс — на сайте, рассрочка
-            от Т-Банка, помощь с налоговым вычетом 13%.
-          </li>
-          <li>
-            <strong>Гарантия 1–5 лет</strong> на все типы работ.
-          </li>
-        </ul>
-
-        <h2 className="mt-12 text-2xl font-bold">Реквизиты и лицензия</h2>
-        <dl className="mt-4 grid gap-2 text-sm">
-          <div>
-            <dt className="font-semibold">Юридическое лицо</dt>
-            <dd className="text-muted-foreground">{CLINIC.legalName}</dd>
+        <section className="mt-16">
+          <h2 className="font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">
+            Наши принципы
+          </h2>
+          <div className="mt-7 grid gap-4 sm:grid-cols-2">
+            {PRINCIPLES.map((p, idx) => (
+              <div
+                key={p.title}
+                className="relative rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft md:p-7"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute -top-3 left-6 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink-900 font-display text-xs font-medium text-white"
+                >
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-display text-xl font-medium leading-snug text-ink-900">
+                  {p.title}
+                </h3>
+                <p className="mt-2.5 text-[15px] leading-relaxed text-muted-foreground">
+                  {p.text}
+                </p>
+              </div>
+            ))}
           </div>
-          <div>
-            <dt className="font-semibold">ОГРН</dt>
-            <dd className="text-muted-foreground">{CLINIC.ogrn}</dd>
-          </div>
-          <div>
-            <dt className="font-semibold">Медицинская лицензия</dt>
-            <dd className="text-muted-foreground">
-              {CLINIC.license.number}, бессрочная
-            </dd>
-          </div>
-          <div>
-            <dt className="font-semibold">Год основания</dt>
-            <dd className="text-muted-foreground">{CLINIC.founded}</dd>
-          </div>
-        </dl>
+        </section>
 
-        <h2 className="mt-12 text-2xl font-bold">Клиника в работе</h2>
+        <section className="mt-16">
+          <h2 className="font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">
+            Реквизиты и&nbsp;лицензия
+          </h2>
+          <dl className="mt-7 grid gap-3 sm:grid-cols-2">
+            {[
+              ["Юридическое лицо", CLINIC.legalName],
+              ["ОГРН", CLINIC.ogrn],
+              ["Медицинская лицензия", `${CLINIC.license.number}, бессрочная`],
+              ["Год основания", String(CLINIC.founded)],
+            ].map(([label, value]) => (
+              <div
+                key={label}
+                className="rounded-2xl bg-white p-5 ring-1 ring-foreground/5 shadow-soft"
+              >
+                <dt className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                  {label}
+                </dt>
+                <dd className="mt-1.5 font-display text-base font-medium text-ink-900 md:text-lg">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
-        <figure className="mt-6 overflow-hidden rounded-2xl bg-slate-200">
-          <Image
-            src="/media/clinic/reception-wide.webp"
-            alt="Приёмная клиники «Моя Стоматология»"
-            width={1600}
-            height={1200}
-            sizes="(min-width: 768px) 768px, 100vw"
-            className="h-auto w-full object-cover"
-          />
-        </figure>
+        <section className="mt-16">
+          <h2 className="font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">
+            Клиника в&nbsp;работе
+          </h2>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl bg-slate-200">
+          <figure className="relative mt-7 overflow-hidden rounded-[24px] bg-slate-200 ring-luxe">
             <Image
-              src="/media/clinic/doctor-at-work-1.webp"
-              alt="Команда клиники в работе"
-              width={1200}
-              height={1600}
-              sizes="(min-width: 640px) 384px, 100vw"
+              src="/media/clinic/reception-wide.webp"
+              alt="Приёмная клиники «Моя Стоматология»"
+              width={1600}
+              height={1200}
+              sizes="(min-width: 768px) 768px, 100vw"
               className="h-auto w-full object-cover"
             />
           </figure>
-          <figure className="overflow-hidden rounded-2xl bg-slate-200">
-            <Image
-              src="/media/clinic/doctor-at-work-2.webp"
-              alt="Лечение пациента"
-              width={1200}
-              height={1600}
-              sizes="(min-width: 640px) 384px, 100vw"
-              className="h-auto w-full object-cover"
-            />
-          </figure>
-        </div>
 
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <figure className="overflow-hidden rounded-2xl bg-slate-200">
-            <Image
-              src="/media/procedures/implant-1.webp"
-              alt="Имплантация — установка имплантата"
-              width={1200}
-              height={1600}
-              sizes="(min-width: 640px) 384px, 100vw"
-              className="h-auto w-full object-cover"
-            />
-          </figure>
-          <VideoPlayer
-            src="/media/video/clinic-tour"
-            poster="/media/video/clinic-tour.poster.webp"
-            title="Тур по кабинету"
-            aspectRatio="9/16"
-          />
-        </div>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            <figure className="relative overflow-hidden rounded-[20px] bg-slate-200 ring-luxe">
+              <Image
+                src="/media/clinic/doctor-at-work-1.webp"
+                alt="Команда клиники в работе"
+                width={1200}
+                height={1600}
+                sizes="(min-width: 640px) 384px, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
+            <figure className="relative overflow-hidden rounded-[20px] bg-slate-200 ring-luxe">
+              <Image
+                src="/media/clinic/doctor-at-work-2.webp"
+                alt="Лечение пациента"
+                width={1200}
+                height={1600}
+                sizes="(min-width: 640px) 384px, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
+          </div>
 
-        <div className="mt-4">
-          <VideoPlayer
-            src="/media/video/treatment"
-            poster="/media/video/treatment.poster.webp"
-            title="Общий план лечения"
-            aspectRatio="9/16"
-          />
-        </div>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            <figure className="relative overflow-hidden rounded-[20px] bg-slate-200 ring-luxe">
+              <Image
+                src="/media/procedures/implant-1.webp"
+                alt="Имплантация — установка имплантата"
+                width={1200}
+                height={1600}
+                sizes="(min-width: 640px) 384px, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </figure>
+            <div className="relative ring-luxe rounded-[20px] overflow-hidden">
+              <VideoPlayer
+                src="/media/video/clinic-tour"
+                poster="/media/video/clinic-tour.poster.webp"
+                title="Тур по кабинету"
+                aspectRatio="9/16"
+              />
+            </div>
+          </div>
+
+          <div className="mt-5 relative ring-luxe rounded-[20px] overflow-hidden">
+            <VideoPlayer
+              src="/media/video/treatment"
+              poster="/media/video/treatment.poster.webp"
+              title="Общий план лечения"
+              aspectRatio="9/16"
+            />
+          </div>
+        </section>
       </article>
-    </>
+    </div>
   );
 }

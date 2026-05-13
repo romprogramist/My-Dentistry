@@ -59,23 +59,25 @@ export default async function BlogPostPage({
   });
 
   return (
-    <>
+    <div className="bg-ivory-gradient">
       <Breadcrumbs
         items={[
           { name: "Блог", href: "/blog/" },
           { name: meta.title, href: `/blog/${slug}/` },
         ]}
       />
-      <article className="container mx-auto max-w-3xl px-4 py-8">
-        <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+      <article className="container mx-auto max-w-3xl px-4 py-10 md:py-16">
+        <span className="inline-block text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
           {meta.category}
         </span>
-        <h1 className="mt-2 text-3xl font-bold md:text-4xl">{meta.title}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <h1 className="mt-3 font-display text-balance text-4xl font-medium leading-[1.1] text-ink-900 md:text-5xl">
+          {meta.title}
+        </h1>
+        <p className="mt-5 text-sm font-medium uppercase tracking-wider text-muted-foreground">
           {meta.authorName} · {meta.authorRole} ·{" "}
           {new Date(meta.date).toLocaleDateString("ru-RU")}
         </p>
-        <div className="prose prose-slate mt-8 max-w-none break-words">
+        <div className="prose prose-slate prose-headings:font-display prose-headings:font-medium prose-headings:tracking-tight prose-a:text-brand-700 mt-10 max-w-none break-words">
           <Mdx />
         </div>
       </article>
@@ -83,6 +85,6 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-    </>
+    </div>
   );
 }
