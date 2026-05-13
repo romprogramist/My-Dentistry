@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { BookingForm } from "@/components/forms/BookingForm";
 import { createPageMetadata } from "@/lib/seo/metadata";
@@ -5,6 +6,7 @@ import { buildPersonDentist } from "@/lib/schema/builders";
 
 const NAME = "Хечоян Армен Араратович";
 const ROLE = "Врач-стоматолог-ортопед";
+const INITIALS = "ХА";
 const SLUG = "khechoyan-armen-aratovich";
 
 export const metadata = createPageMetadata({
@@ -13,6 +15,14 @@ export const metadata = createPageMetadata({
     "Хечоян Армен Араратович — врач-стоматолог-ортопед клиники «Моя Стоматология» в Сочи. Протезирование зубов: коронки, виниры, мосты, протезы на имплантах.",
   path: `/vrachi/${SLUG}/`,
 });
+
+const SPECIALIZATIONS = [
+  "Протезирование зубов: коронки металлокерамика, цирконий, E.max",
+  "Виниры (керамические, E.max)",
+  "Съёмные и бюгельные протезы",
+  "Протезирование на имплантах",
+  "Восстановление зубов на штифтах и культевых вкладках",
+];
 
 const SCHEMA = buildPersonDentist({
   name: NAME,
@@ -23,7 +33,7 @@ const SCHEMA = buildPersonDentist({
 
 export default function DoctorPage() {
   return (
-    <>
+    <div className="bg-ivory-gradient">
       <Breadcrumbs
         items={[
           { name: "Врачи", href: "/vrachi/" },
@@ -31,41 +41,73 @@ export default function DoctorPage() {
         ]}
       />
 
-      <article className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-[1fr_2fr]">
-          <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-slate-200">
-            <div className="flex h-full items-center justify-center text-muted-foreground">
-              Фото врача
+      <article className="container mx-auto px-4 py-10 md:py-16">
+        <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1fr_2fr] md:gap-14 lg:gap-16">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-brand-100/60 via-transparent to-mint-100/60 blur-2xl"
+            />
+            <div
+              aria-hidden="true"
+              className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[24px] bg-gradient-to-br from-brand-100 to-mint-100 ring-luxe"
+            >
+              <span className="font-display text-[7rem] font-medium text-brand-800/80">
+                {INITIALS}
+              </span>
             </div>
           </div>
 
           <div>
-            <h1 className="text-3xl font-bold md:text-4xl">{NAME}</h1>
-            <p className="mt-2 text-lg text-brand-700">{ROLE}</p>
+            <span className="inline-block text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
+              {ROLE}
+            </span>
+            <h1 className="mt-3 font-display text-4xl font-medium leading-[1.05] text-ink-900 md:text-5xl">
+              {NAME}
+            </h1>
 
-            <h2 className="mt-8 text-xl font-bold">Специализация</h2>
-            <ul className="mt-2 space-y-1 text-sm">
-              <li>
-                ✓ Протезирование зубов: коронки металлокерамика, цирконий, E.max
-              </li>
-              <li>✓ Виниры (керамические, E.max)</li>
-              <li>✓ Съёмные и бюгельные протезы</li>
-              <li>✓ Протезирование на имплантах</li>
-              <li>✓ Восстановление зубов на штифтах и культевых вкладках</li>
+            <h2 className="mt-10 font-display text-2xl font-medium text-ink-900">
+              Специализация
+            </h2>
+            <ul className="mt-5 space-y-3 text-[15px]">
+              {SPECIALIZATIONS.map((s) => (
+                <li key={s} className="flex gap-3 text-ink-700">
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 inline-flex size-6 flex-shrink-0 items-center justify-center rounded-full bg-mint-50 text-mint-700 ring-1 ring-mint-100"
+                  >
+                    <Check className="size-3.5" strokeWidth={2.5} />
+                  </span>
+                  <span>{s}</span>
+                </li>
+              ))}
             </ul>
 
-            <p className="mt-8 text-muted-foreground italic">
-              «Хорошая работа должна служить пациенту годами. Я стараюсь, чтобы
-              каждая коронка была не просто красивой, а удобной для жевания и
-              комфортной для дёсен.»
-            </p>
+            <blockquote className="mt-10 rounded-2xl border-l-4 border-mint-500 bg-white/60 p-6 font-display text-lg leading-relaxed text-ink-700 ring-1 ring-foreground/5 shadow-soft md:text-xl">
+              «Хорошая работа должна служить пациенту годами. Я&nbsp;стараюсь,
+              чтобы каждая коронка была не&nbsp;просто красивой, а&nbsp;удобной
+              для жевания и&nbsp;комфортной для дёсен.»
+            </blockquote>
           </div>
         </div>
 
-        <section className="mt-12 rounded-lg bg-slate-50 p-6">
-          <h2 className="text-xl font-bold">Записаться к Армену Араратовичу</h2>
-          <div className="mx-auto mt-4 max-w-md">
-            <BookingForm />
+        <section className="mt-14 overflow-hidden rounded-3xl bg-gradient-to-br from-mint-50 via-white to-brand-50 ring-1 ring-foreground/5 shadow-luxe md:mt-20">
+          <div className="grid grid-cols-1 gap-8 p-6 md:grid-cols-[1fr_1fr] md:gap-12 md:p-12">
+            <div>
+              <span className="inline-block text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
+                Запись
+              </span>
+              <h2 className="mt-3 font-display text-3xl font-medium leading-tight text-ink-900 md:text-4xl">
+                Записаться к&nbsp;Армену Араратовичу
+              </h2>
+              <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground md:text-base">
+                Оставьте заявку — администратор перезвонит в&nbsp;течение часа
+                и&nbsp;подберёт удобный слот в&nbsp;расписании врача.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-elevated md:p-8">
+              <BookingForm />
+            </div>
           </div>
         </section>
       </article>
@@ -74,6 +116,6 @@ export default function DoctorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
       />
-    </>
+    </div>
   );
 }

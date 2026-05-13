@@ -87,10 +87,10 @@ function Chip({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "touch-target rounded-lg border-[1.5px] px-4 text-sm font-medium transition-colors",
+        "touch-target rounded-xl border-[1.5px] px-4 text-sm font-medium transition-all duration-200",
         active
-          ? "border-mint-500 bg-mint-500 font-semibold text-white"
-          : "border-mint-200 text-mint-700 hover:bg-mint-50"
+          ? "border-mint-500 bg-gradient-to-br from-mint-500 to-mint-600 font-semibold text-white shadow-[0_6px_16px_rgba(8,145,178,0.30)]"
+          : "border-mint-100 bg-white text-mint-700 shadow-soft hover:-translate-y-px hover:border-mint-300 hover:bg-mint-50"
       )}
     >
       {label}

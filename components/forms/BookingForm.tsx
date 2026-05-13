@@ -30,7 +30,7 @@ import { BookingSuccess } from "./BookingSuccess";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const INPUT_CLASS =
-  "h-12 rounded-lg border-[1.5px] border-mint-200 bg-white px-4 text-base focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15";
+  "h-12 rounded-xl border-[1.5px] border-mint-100 bg-white px-4 text-base shadow-soft transition-all duration-200 placeholder:text-muted-foreground/50 hover:border-mint-200 focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15";
 
 export function BookingForm({
   servicePreselected,
@@ -81,14 +81,14 @@ export function BookingForm({
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
         <div>
-          <div className="text-xs font-bold uppercase tracking-wider text-mint-700">
+          <div className="text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
             Онлайн-запись
           </div>
-          <h2 className="mt-1 text-2xl font-bold text-mint-900">
+          <h2 className="mt-2 font-display text-3xl font-medium leading-tight text-ink-900">
             Записаться на приём
           </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Перезвоним в течение часа в рабочее время
+          <p className="mt-2 text-[15px] text-muted-foreground">
+            Перезвоним в течение часа в&nbsp;рабочее время
           </p>
         </div>
 
@@ -171,7 +171,8 @@ export function BookingForm({
                 <Textarea
                   {...field}
                   rows={3}
-                  className="rounded-lg border-[1.5px] border-mint-200 bg-white px-4 py-2 focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15"
+                  placeholder="Что вас беспокоит? — необязательно"
+                  className="rounded-xl border-[1.5px] border-mint-100 bg-white px-4 py-3 shadow-soft transition-all duration-200 placeholder:text-muted-foreground/50 hover:border-mint-200 focus-visible:border-mint-500 focus-visible:ring-4 focus-visible:ring-mint-500/15"
                 />
               </FormControl>
               <FormMessage />

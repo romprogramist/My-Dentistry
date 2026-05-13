@@ -11,18 +11,13 @@ export const metadata = createPageMetadata({
 
 export default function ZapisPage() {
   return (
-    <>
+    <div className="bg-ivory-gradient">
       <Breadcrumbs items={[{ name: "Запись", href: "/zapis/" }]} />
-      <section className="container mx-auto max-w-md px-4 py-8 md:py-16">
-        <h1 className="text-3xl font-bold">Записаться на приём</h1>
-        <p className="mt-2 text-muted-foreground">
-          Заполните форму — мы перезвоним в течение часа в рабочее время и
-          подберём удобное время.
-        </p>
-        <div className="mt-6">
+      <section className="container mx-auto max-w-md px-4 py-10 md:py-20">
+        <div className="rounded-3xl bg-white p-6 ring-1 ring-foreground/5 shadow-luxe md:p-10">
           <BookingForm />
         </div>
       </section>
-    </>
+    </div>
   );
 }
