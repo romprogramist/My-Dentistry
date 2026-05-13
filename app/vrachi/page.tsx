@@ -50,7 +50,7 @@ export default function DoctorsIndex() {
             <Link
               key={d.slug}
               href={`/vrachi/${d.slug}/`}
-              className="group relative flex items-start gap-5 rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated md:p-7"
+              className="group relative flex items-start gap-5 rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:bg-slate-50 hover:shadow-elevated md:p-7"
             >
               <ArrowUpRight
                 className="absolute right-6 top-6 size-5 text-muted-foreground/30 transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-brand-700"

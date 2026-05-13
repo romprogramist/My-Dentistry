@@ -53,8 +53,8 @@ export default function ServicesIndex() {
               <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
                 {cat.description}
               </p>
-              <span className="mt-5 text-sm font-medium text-brand-700">
-                Смотреть цены
+              <span className="mt-5 text-sm font-semibold text-brand-700">
+                Подробнее →
               </span>
             </Link>
           ))}

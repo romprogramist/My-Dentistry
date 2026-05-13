@@ -47,10 +47,10 @@ export function HomeMicroscope() {
           </div>
           <Link
             href="/uslugi/endodontiya-pod-mikroskopom/"
-            className={`${buttonVariants({ size: "lg" })} mt-8`}
+            className={`${buttonVariants()} mt-8`}
           >
             Узнать больше
-            <ArrowRight className="ml-1 size-5 transition-transform duration-300 group-hover/button:translate-x-1" />
+            <ArrowRight className="ml-1 size-4 transition-transform duration-300 group-hover/button:translate-x-1" />
           </Link>
         </div>
         <div className="relative mx-auto w-full max-w-sm">

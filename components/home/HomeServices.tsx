@@ -35,10 +35,10 @@ export function HomeServices() {
           </div>
           <Link
             href="/uslugi/"
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-white/30 hover:bg-white/5"
+            className={`${buttonVariants({ variant: "ghost" })} text-white hover:bg-white/10 hover:text-white`}
           >
             Все услуги
-            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            <ArrowRight className="ml-1 size-4 transition-transform duration-300 group-hover/button:translate-x-1" />
           </Link>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
