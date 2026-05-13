@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Cormorant_Garamond } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
@@ -11,6 +11,13 @@ const inter = Inter({
   subsets: ["latin", "cyrillic"],
   display: "swap",
   variable: "--font-sans",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "cyrillic"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +44,7 @@ export default function RootLayout({
   const orgSchema = buildOrganization();
   const clinicSchema = buildMedicalClinic();
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ru" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased pb-[72px] md:pb-0">
         <Header />
         <main className="flex-1">{children}</main>
