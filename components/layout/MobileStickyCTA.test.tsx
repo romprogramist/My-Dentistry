@@ -1,6 +1,7 @@
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { vi } from "vitest";
 vi.mock("next/link", () => ({
-  default: ({ href, children, ...rest }: any) => <a href={href} {...rest}>{children}</a>,
+  default: ({ href, children, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; children: ReactNode }) => <a href={href} {...rest}>{children}</a>,
 }));
 import { render, screen } from "@testing-library/react";
 import { describe, expect, test } from "vitest";

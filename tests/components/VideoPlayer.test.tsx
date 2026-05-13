@@ -17,7 +17,7 @@ describe("VideoPlayer", () => {
     });
     expect(button).toBeInTheDocument();
     const poster = screen.getByAltText("Эндодонтия под микроскопом");
-    expect(poster).toHaveAttribute("src", baseProps.poster);
+    expect(poster.getAttribute("src")).toContain(encodeURIComponent(baseProps.poster));
     expect(document.querySelector("video")).toBeNull();
   });
 

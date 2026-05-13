@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { createPageMetadata } from "@/lib/seo/metadata";
 import { CLINIC } from "@/lib/constants/clinic";
@@ -72,37 +73,34 @@ export default function AboutPage() {
         <h2 className="mt-12 text-2xl font-bold">Клиника в работе</h2>
 
         <figure className="mt-6 overflow-hidden rounded-2xl bg-slate-200">
-          <img
+          <Image
             src="/media/clinic/reception-wide.webp"
             alt="Приёмная клиники «Моя Стоматология»"
             width={1600}
             height={1200}
-            loading="lazy"
-            decoding="async"
+            sizes="(min-width: 768px) 768px, 100vw"
             className="h-auto w-full object-cover"
           />
         </figure>
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <figure className="overflow-hidden rounded-2xl bg-slate-200">
-            <img
+            <Image
               src="/media/clinic/doctor-at-work-1.webp"
               alt="Команда клиники в работе"
               width={1200}
               height={1600}
-              loading="lazy"
-              decoding="async"
+              sizes="(min-width: 640px) 384px, 100vw"
               className="h-auto w-full object-cover"
             />
           </figure>
           <figure className="overflow-hidden rounded-2xl bg-slate-200">
-            <img
+            <Image
               src="/media/clinic/doctor-at-work-2.webp"
               alt="Лечение пациента"
               width={1200}
               height={1600}
-              loading="lazy"
-              decoding="async"
+              sizes="(min-width: 640px) 384px, 100vw"
               className="h-auto w-full object-cover"
             />
           </figure>
@@ -110,13 +108,12 @@ export default function AboutPage() {
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <figure className="overflow-hidden rounded-2xl bg-slate-200">
-            <img
+            <Image
               src="/media/procedures/implant-1.webp"
               alt="Имплантация — установка имплантата"
               width={1200}
               height={1600}
-              loading="lazy"
-              decoding="async"
+              sizes="(min-width: 640px) 384px, 100vw"
               className="h-auto w-full object-cover"
             />
           </figure>
