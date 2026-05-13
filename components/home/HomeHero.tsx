@@ -24,10 +24,8 @@ export function HomeHero() {
             Сочи · с {CLINIC.founded} года
           </span>
 
-          <h1 className="mt-5 font-display text-balance text-[2.4rem] font-medium leading-[1.05] text-ink-900 xs:text-5xl md:text-[3.6rem] lg:text-[4rem]">
-            Стоматология,
-            <br />
-            к&nbsp;которой&nbsp;возвращаются.
+          <h1 className="mt-5 font-display text-balance text-[2.2rem] font-medium leading-[1.05] text-ink-900 xs:text-[2.6rem] sm:text-5xl md:text-[3.1rem] lg:text-[3.8rem]">
+            Стоматология, к&nbsp;которой возвращаются.
           </h1>
 
           <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground xs:text-lg md:text-xl">
