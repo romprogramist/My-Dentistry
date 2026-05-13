@@ -35,7 +35,7 @@ export default function ServicesIndex() {
             <Link
               key={cat.slug}
               href={`/uslugi/${cat.slug}/`}
-              className="group relative flex flex-col rounded-2xl bg-white p-6 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated md:p-7"
+              className="group relative flex flex-col rounded-2xl bg-white p-6 text-brand-700 ring-1 ring-foreground/5 shadow-soft transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-elevated md:p-7"
             >
               <span
                 aria-hidden="true"
