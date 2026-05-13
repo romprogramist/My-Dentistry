@@ -9,7 +9,7 @@ export function MobileStickyCTA() {
     <div
       role="region"
       aria-label="Быстрая запись"
-      className="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t bg-white p-2 shadow-lg md:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t border-foreground/5 bg-white/95 px-3 py-2.5 backdrop-blur-md shadow-[0_-8px_24px_rgba(15,23,42,0.08)] md:hidden"
     >
       {primaryPhone ? (
         <a
