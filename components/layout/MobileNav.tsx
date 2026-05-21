@@ -6,6 +6,7 @@ import { CLINIC } from "@/lib/constants/clinic";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTrigger,
   SheetTitle,
@@ -30,13 +31,17 @@ export function MobileNav({ nav }: { nav: readonly NavItem[] }) {
         <SheetTitle className="sr-only">Меню навигации</SheetTitle>
         <nav className="mt-8 flex flex-col gap-1 px-4">
           {nav.map((item) => (
-            <Link
+            <SheetClose
               key={item.href}
-              href={item.href}
-              className="touch-target justify-start text-base font-medium hover:text-brand-600"
+              render={
+                <Link
+                  href={item.href}
+                  className="touch-target justify-start text-base font-medium hover:text-brand-600"
+                />
+              }
             >
               {item.label}
-            </Link>
+            </SheetClose>
           ))}
         </nav>
         {CLINIC.phones[0] ? (
