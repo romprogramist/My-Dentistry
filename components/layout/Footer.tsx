@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { CLINIC } from "@/lib/constants/clinic";
+import { ToothMark } from "./ToothMark";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -37,9 +38,9 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <span
               aria-hidden="true"
-              className="inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-mint-500 font-display text-base font-medium text-white shadow-[0_8px_20px_rgba(8,145,178,0.30)]"
+              className="inline-flex size-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-mint-500 text-white shadow-[0_8px_20px_rgba(8,145,178,0.30)]"
             >
-              MS
+              <ToothMark className="size-[22px]" />
             </span>
             <h3 className="font-display text-2xl font-medium text-white">{CLINIC.name}</h3>
           </div>

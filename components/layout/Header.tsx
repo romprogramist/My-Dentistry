@@ -3,6 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { CLINIC } from "@/lib/constants/clinic";
 import { MobileNav } from "./MobileNav";
+import { ToothMark } from "./ToothMark";
 
 const NAV = [
   { href: "/uslugi/", label: "Услуги" },
@@ -20,9 +21,9 @@ export function Header() {
         <Link href="/" className="group flex items-center gap-2.5 leading-tight md:gap-3">
           <span
             aria-hidden="true"
-            className="hidden size-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-700 font-display text-base font-medium text-white shadow-[0_6px_16px_rgba(8,145,178,0.30)] transition-transform duration-300 group-hover:scale-105 xs:inline-flex md:hidden lg:inline-flex lg:size-10"
+            className="hidden size-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-mint-700 text-white shadow-[0_6px_16px_rgba(8,145,178,0.30)] transition-transform duration-300 group-hover:scale-105 xs:inline-flex md:hidden lg:inline-flex lg:size-10"
           >
-            MS
+            <ToothMark className="size-5 lg:size-[22px]" />
           </span>
           <span className="flex flex-col">
             <span className="font-display text-base font-medium leading-tight text-ink-900 md:text-lg lg:text-xl">
