@@ -24,7 +24,6 @@ import { getServiceLabel } from "@/lib/forms/get-service-label";
 import { CLINIC } from "@/lib/constants/clinic";
 
 import { PhoneInput } from "./PhoneInput";
-import { TimeChips } from "./TimeChips";
 import { BookingSuccess } from "./BookingSuccess";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -49,7 +48,6 @@ export function BookingForm({
     defaultValues: {
       name: "",
       phone: "",
-      preferredTime: "",
       message: "",
       // zod schema requires literal `true`; defaultValues must start unchecked
       consent: false as unknown as true,
@@ -137,23 +135,6 @@ export function BookingForm({
                   onBlur={field.onBlur}
                   name={field.name}
                   className={INPUT_CLASS}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="preferredTime"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Удобное время</FormLabel>
-              <FormControl>
-                <TimeChips
-                  value={field.value ?? ""}
-                  onChange={field.onChange}
                 />
               </FormControl>
               <FormMessage />
