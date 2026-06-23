@@ -15,7 +15,7 @@ export function HomeContact() {
     <section className="bg-ivory-gradient">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="overflow-hidden rounded-[28px] bg-gradient-to-br from-mint-50 via-white to-brand-50 ring-1 ring-foreground/5 shadow-luxe">
-          <div className="grid grid-cols-1 gap-10 p-6 md:grid-cols-2 md:gap-14 md:p-10 lg:p-14">
+          <div className="grid grid-cols-1 gap-10 p-6 md:p-10 lg:grid-cols-2 lg:gap-14 lg:p-14">
             <div className="flex min-w-0 flex-col">
               <span className="inline-block text-xs font-medium uppercase tracking-[0.22em] text-mint-700">
                 Контакты
@@ -52,8 +52,8 @@ export function HomeContact() {
               </div>
 
               {/* Contact cards */}
-              <div className="mt-5 grid gap-3 xs:grid-cols-2">
-                <div className={`${CARD} flex gap-3.5 xs:col-span-2`}>
+              <div className="mt-5 grid gap-3 xl:grid-cols-2">
+                <div className={`${CARD} flex gap-3.5 xl:col-span-2`}>
                   <span className={ICON_CHIP}>
                     <MapPin className="size-5" strokeWidth={1.8} aria-hidden="true" />
                   </span>
@@ -80,7 +80,7 @@ export function HomeContact() {
                         <a
                           key={p.tel}
                           href={`tel:${p.tel}`}
-                          className="text-[15px] font-semibold text-ink-900 transition-colors hover:text-mint-700"
+                          className="whitespace-nowrap text-[15px] font-semibold text-ink-900 transition-colors hover:text-mint-700"
                         >
                           {p.display}
                         </a>
