@@ -9,6 +9,7 @@ export const metadata = createPageMetadata({
   description:
     "Полный прайс на услуги стоматологии в Сочи: лечение, протезирование, имплантация, хирургия. Цены от 4 000 ₽.",
   path: "/uslugi/",
+  ogImage: "/images/og/uslugi.jpg",
 });
 
 export default function ServicesIndex() {

@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Виниры E.max в Сочи — цена от 25 000 ₽ за единицу. Голливудская улыбка за 10 дней. Тонкие керамические накладки, не темнеют со временем. Срок службы 15-20 лет.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/viniry.jpg",
 });
 
 const FAQ_ITEMS = [

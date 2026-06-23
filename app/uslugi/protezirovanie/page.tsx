@@ -16,6 +16,7 @@ export const metadata = createPageMetadata({
   description:
     "Протезирование зубов в Сочи: коронки, виниры, мосты, съёмные и бюгельные протезы. Своя зуботехническая база — сроки от 5 до 10 дней. Гарантия до 5 лет.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/protezirovanie.jpg",
 });
 
 const FAQ_ITEMS = [

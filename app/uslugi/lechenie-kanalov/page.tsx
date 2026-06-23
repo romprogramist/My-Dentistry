@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Лечение каналов в Сочи от 5 000 ₽ за канал. Лечим пульпит и периодонтит с медикаментозной обработкой и контрольными снимками. Под микроскопом — для сложных случаев.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/lechenie-kanalov.jpg",
 });
 
 const FAQ_ITEMS = [

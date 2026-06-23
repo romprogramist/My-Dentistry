@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Удаление зуба мудрости в Сочи — 5 000-10 000 ₽. Простое и сложное удаление, в т.ч. ретенированных и дистопированных «восьмёрок». Современная анестезия.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/udalenie-zuba-mudrosti.jpg",
 });
 
 const FAQ_ITEMS = [

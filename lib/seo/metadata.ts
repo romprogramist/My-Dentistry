@@ -7,6 +7,9 @@ export type PageMetadataInput = {
   path: string;
   ogImage?: string;
   noIndex?: boolean;
+  ogType?: "website" | "article";
+  publishedTime?: string;
+  authors?: string[];
 };
 
 const TITLE_SUFFIX = ` — ${CLINIC.name}`;
@@ -20,19 +23,31 @@ export function createPageMetadata(input: PageMetadataInput): Metadata {
       : `${CLINIC.domain}${input.ogImage}`
     : `${CLINIC.domain}/images/og/default.jpg`;
 
-  return {
+  const ogBase = {
     title: fullTitle,
     description: input.description,
+    url,
+    siteName: CLINIC.name,
+    locale: "ru_RU",
+    images: [{ url: og, width: 1200, height: 630, alt: fullTitle }],
+  };
+  const openGraph =
+    input.ogType === "article"
+      ? {
+          ...ogBase,
+          type: "article" as const,
+          publishedTime: input.publishedTime,
+          authors: input.authors,
+        }
+      : { ...ogBase, type: "website" as const };
+
+  return {
+    // absolute обходит title.template из layout.tsx, иначе бренд клеится дважды.
+    // Так бренд ровно один раз на всех страницах, включая главную (к ней шаблон не применяется).
+    title: { absolute: fullTitle },
+    description: input.description,
     alternates: { canonical: url },
-    openGraph: {
-      title: fullTitle,
-      description: input.description,
-      url,
-      siteName: CLINIC.name,
-      type: "website",
-      locale: "ru_RU",
-      images: [{ url: og, width: 1200, height: 630, alt: fullTitle }],
-    },
+    openGraph,
     twitter: {
       card: "summary_large_image",
       title: fullTitle,

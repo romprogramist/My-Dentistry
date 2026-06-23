@@ -9,6 +9,7 @@ export const metadata = createPageMetadata({
   description:
     "Команда стоматологии «Моя Стоматология» в Сочи: ортопед, терапевт. Опытные врачи с многолетним стажем и отзывами пациентов.",
   path: "/vrachi/",
+  ogImage: "/images/og/vrachi.jpg",
 });
 
 const DOCTORS = [

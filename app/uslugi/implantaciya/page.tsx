@@ -16,6 +16,7 @@ export const metadata = createPageMetadata({
   description:
     "Имплантация зубов в Сочи под ключ от 25 000 ₽. Корейские (Osstem, Dentium) и израильские (MIS, Alpha-Bio) системы. Костная пластика. Гарантия 5 лет на имплант.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/implantaciya.jpg",
 });
 
 const INDICATIONS = [

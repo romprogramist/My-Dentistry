@@ -15,6 +15,7 @@ export const metadata = createPageMetadata({
   description:
     "Навасардян Марине Мовсесовна — врач-стоматолог-терапевт клиники «Моя Стоматология» в Сочи. Лечение кариеса, эндодонтия под микроскопом, реставрация зубов.",
   path: `/vrachi/${SLUG}/`,
+  ogImage: "/images/og/navasardyan-marine-movsesovna.jpg",
 });
 
 const SPECIALIZATIONS = [

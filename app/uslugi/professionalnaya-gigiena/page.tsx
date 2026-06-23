@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Профгигиена в Сочи — 5 000-7 000 ₽. Ультразвук + AIR-FLOW + полировка. Безопасно для эмали. Раз в 6 месяцев — для здоровья зубов и дёсен.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/professionalnaya-gigiena.jpg",
 });
 
 const FAQ_ITEMS = [

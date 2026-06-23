@@ -18,6 +18,7 @@ export const metadata = createPageMetadata({
   description:
     "Лечение и перелечивание корневых каналов под дентальным микроскопом в Сочи. Увеличение до 25× — врач видит каждый канал и микротрещину. Спасаем зубы, которые в других клиниках предлагают удалить.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/endodontiya.jpg",
 });
 
 const FAQ_ITEMS = [

@@ -15,6 +15,7 @@ export const metadata = createPageMetadata({
   description:
     "Хечоян Армен Араратович — врач-стоматолог-ортопед клиники «Моя Стоматология» в Сочи. Протезирование зубов: коронки, виниры, мосты, протезы на имплантах.",
   path: `/vrachi/${SLUG}/`,
+  ogImage: "/images/og/khechoyan-armen-aratovich.jpg",
 });
 
 const SPECIALIZATIONS = [

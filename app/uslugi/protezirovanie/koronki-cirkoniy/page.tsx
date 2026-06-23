@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Циркониевые коронки в Сочи. Прочные, эстетичные, биосовместимые. Срок изготовления 5–10 дней благодаря собственной зуботехнической базе. Гарантия 3 года.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/koronki-cirkoniy.jpg",
 });
 
 const FAQ_ITEMS = [

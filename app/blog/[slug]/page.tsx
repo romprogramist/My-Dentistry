@@ -22,6 +22,9 @@ export async function generateMetadata({
       description: meta.description,
       path: `/blog/${slug}/`,
       ogImage: meta.image,
+      ogType: "article",
+      publishedTime: meta.date,
+      authors: [meta.authorName],
     });
   } catch {
     return createPageMetadata({

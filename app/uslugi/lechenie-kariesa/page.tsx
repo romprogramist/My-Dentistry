@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Безболезненное лечение кариеса в Сочи — от 4 000 ₽. Лечим кариес любой стадии композитными пломбами с световой полимеризацией. Современная анестезия.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/lechenie-kariesa.jpg",
 });
 
 const FAQ_ITEMS = [

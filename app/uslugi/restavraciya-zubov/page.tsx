@@ -17,6 +17,7 @@ export const metadata = createPageMetadata({
   description:
     "Прямая художественная реставрация зубов в Сочи — 4 000-12 000 ₽. Восстанавливаем форму, цвет и функцию зуба за один визит. Композитные материалы.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/restavraciya-zubov.jpg",
 });
 
 const FAQ_ITEMS = [

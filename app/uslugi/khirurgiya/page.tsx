@@ -16,6 +16,7 @@ export const metadata = createPageMetadata({
   description:
     "Хирургическая стоматология в Сочи — удаление зубов, в т.ч. зубов мудрости и ретенированных. Цистэктомия. Аугментация костной ткани. Современная анестезия.",
   path: `/uslugi/${SLUG}/`,
+  ogImage: "/images/og/khirurgiya.jpg",
 });
 
 const FAQ_ITEMS = [
