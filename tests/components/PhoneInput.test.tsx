@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { PhoneInput } from "@/components/forms/PhoneInput";
 
 describe("PhoneInput", () => {
-  it("formats progressive typed input", async () => {
+  it("fills the mask template as digits are typed", async () => {
     const user = userEvent.setup();
     let val = "";
     const handle = vi.fn((v: string) => {
@@ -17,7 +17,7 @@ describe("PhoneInput", () => {
 
     await user.type(screen.getByRole("textbox"), "9");
     rerender(<PhoneInput value={val} onChange={handle} id="phone" />);
-    expect(val).toBe("+7 (9");
+    expect(val).toBe("+7 (9__) ___-__-__");
   });
 
   it("normalises 8-prefixed pasted number", async () => {
