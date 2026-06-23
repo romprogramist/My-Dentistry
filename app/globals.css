@@ -200,8 +200,7 @@
   }
   .font-display {
     font-family: var(--font-display), var(--font-heading), var(--font-sans);
-    letter-spacing: -0.015em;
-    font-feature-settings: "ss01", "ss02";
+    letter-spacing: -0.02em;
   }
   .touch-target {
     @apply inline-flex items-center justify-center min-h-11 min-w-11;

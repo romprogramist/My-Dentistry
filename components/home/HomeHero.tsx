@@ -39,14 +39,7 @@ export function HomeHero() {
               <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
               <span>
                 <strong className="font-semibold">{CLINIC.ratings.twogis.score}</strong>
-                <span className="text-muted-foreground"> · 2ГИС · {CLINIC.ratings.twogis.count}</span>
-              </span>
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3.5 py-1.5 font-medium text-ink-900 shadow-soft ring-1 ring-foreground/5 backdrop-blur">
-              <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-              <span>
-                <strong className="font-semibold">{CLINIC.ratings.yandex.score}</strong>
-                <span className="text-muted-foreground"> · Яндекс · {CLINIC.ratings.yandex.count}</span>
+                <span className="text-muted-foreground"> · 2ГИС · {CLINIC.ratings.twogis.count} отзывов</span>
               </span>
             </span>
           </div>
@@ -87,8 +80,8 @@ export function HomeHero() {
           />
           <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-slate-200 ring-luxe md:aspect-[5/6]">
             <Image
-              src="/media/clinic/reception-detail.webp"
-              alt="Приёмная клиники «Моя Стоматология» — Сочи, Донская 52"
+              src="/media/clinic/doctor-at-work-1.webp"
+              alt="Врач клиники «Моя Стоматология» лечит пациента — Сочи, Донская 52"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               priority

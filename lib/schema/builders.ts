@@ -25,15 +25,12 @@ export function buildOrganization(): WithContext<Organization> {
   };
 }
 
-function combineRatings(): AggregateRating {
-  const a = CLINIC.ratings.twogis;
-  const b = CLINIC.ratings.yandex;
-  const totalCount = a.count + b.count;
-  const weighted = (a.score * a.count + b.score * b.count) / totalCount;
+function clinicRating(): AggregateRating {
+  const r = CLINIC.ratings.twogis;
   return {
     "@type": "AggregateRating",
-    ratingValue: Number(weighted.toFixed(2)),
-    reviewCount: totalCount,
+    ratingValue: r.score,
+    reviewCount: r.count,
     bestRating: 5,
     worstRating: 1,
   };
@@ -67,7 +64,7 @@ export function buildMedicalClinic(): WithContext<MedicalClinic> {
       closes: h.closes,
     })),
     priceRange: "₽₽",
-    aggregateRating: combineRatings(),
+    aggregateRating: clinicRating(),
     sameAs: [CLINIC.social.instagram],
   };
 }

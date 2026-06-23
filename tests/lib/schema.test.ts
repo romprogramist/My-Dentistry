@@ -27,11 +27,11 @@ describe("buildMedicalClinic", () => {
     expect(result.openingHoursSpecification[0]?.opens).toBe("09:00");
   });
 
-  it("includes aggregateRating computed from 2GIS + Yandex", () => {
+  it("includes aggregateRating from 2GIS", () => {
     const result = buildMedicalClinic();
     expect(result.aggregateRating).toBeDefined();
-    expect(result.aggregateRating?.reviewCount).toBe(144);
-    expect(result.aggregateRating?.ratingValue).toBeGreaterThan(4.7);
+    expect(result.aggregateRating?.reviewCount).toBe(104);
+    expect(result.aggregateRating?.ratingValue).toBe(4.9);
   });
 });
 

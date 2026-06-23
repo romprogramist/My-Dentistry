@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { BookingForm } from "@/components/forms/BookingForm";
@@ -6,7 +7,7 @@ import { buildPersonDentist } from "@/lib/schema/builders";
 
 const NAME = "Навасардян Марине Мовсесовна";
 const ROLE = "Врач-стоматолог-терапевт";
-const INITIALS = "НМ";
+const PHOTO = "/media/doctors/navasardyan-marine-movsesovna.webp";
 const SLUG = "navasardyan-marine-movsesovna";
 
 export const metadata = createPageMetadata({
@@ -48,13 +49,15 @@ export default function DoctorPage() {
               aria-hidden="true"
               className="absolute -inset-3 rounded-[28px] bg-gradient-to-br from-brand-100/60 via-transparent to-mint-100/60 blur-2xl"
             />
-            <div
-              aria-hidden="true"
-              className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[24px] bg-gradient-to-br from-brand-100 to-mint-100 ring-luxe"
-            >
-              <span className="font-display text-[7rem] font-medium text-brand-800/80">
-                {INITIALS}
-              </span>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-gradient-to-br from-brand-100 to-mint-100 ring-luxe">
+              <Image
+                src={PHOTO}
+                alt={`${NAME} — ${ROLE}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority
+                className="object-cover object-top"
+              />
             </div>
           </div>
 

@@ -23,12 +23,7 @@ export function ReviewsCarousel() {
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 font-medium text-ink-900 shadow-soft ring-1 ring-foreground/5 backdrop-blur">
                 <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
                 <strong className="font-semibold">{CLINIC.ratings.twogis.score}</strong>
-                <span className="text-muted-foreground">· 2ГИС · {CLINIC.ratings.twogis.count}</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/80 px-3 py-1.5 font-medium text-ink-900 shadow-soft ring-1 ring-foreground/5 backdrop-blur">
-                <Star className="size-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                <strong className="font-semibold">{CLINIC.ratings.yandex.score}</strong>
-                <span className="text-muted-foreground">· Яндекс · {CLINIC.ratings.yandex.count}</span>
+                <span className="text-muted-foreground">· 2ГИС · {CLINIC.ratings.twogis.count} отзывов</span>
               </span>
             </div>
           </div>

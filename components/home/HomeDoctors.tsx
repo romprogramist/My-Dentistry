@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
@@ -5,14 +6,14 @@ const DOCTORS = [
   {
     slug: "khechoyan-armen-aratovich",
     name: "Хечоян Армен Араратович",
-    initials: "ХА",
+    photo: "/media/doctors/khechoyan-armen-aratovich.webp",
     role: "Врач-стоматолог-ортопед",
     bio: "Специализация — протезирование зубов: коронки, виниры, мосты, протезы на имплантах. Особо отмечается пациентами в отзывах.",
   },
   {
     slug: "navasardyan-marine-movsesovna",
     name: "Навасардян Марине Мовсесовна",
-    initials: "НМ",
+    photo: "/media/doctors/navasardyan-marine-movsesovna.webp",
     role: "Врач-стоматолог-терапевт",
     bio: "Терапевтическое лечение зубов, эндодонтия под микроскопом, лечение каналов любой сложности.",
   },
@@ -44,11 +45,14 @@ export function HomeDoctors() {
                 className="absolute right-6 top-6 size-5 text-muted-foreground/40 transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-brand-700"
                 aria-hidden="true"
               />
-              <div
-                aria-hidden="true"
-                className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-100 to-mint-100 font-display text-2xl font-medium text-brand-800 ring-1 ring-brand-100/60"
-              >
-                {d.initials}
+              <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-mint-100 ring-1 ring-brand-100/60">
+                <Image
+                  src={d.photo}
+                  alt={`${d.name} — ${d.role}`}
+                  fill
+                  sizes="80px"
+                  className="object-cover object-top"
+                />
               </div>
               <div className="min-w-0 pr-6">
                 <h3 className="font-display text-xl font-medium leading-snug text-ink-900">
