@@ -22,7 +22,7 @@ export function MobileNav({ nav }: { nav: readonly NavItem[] }) {
         className={buttonVariants({
           variant: "ghost",
           size: "icon",
-          className: "md:hidden",
+          className: "lg:hidden",
         })}
       >
         <Menu className="h-5 w-5" />

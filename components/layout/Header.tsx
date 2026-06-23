@@ -35,7 +35,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Основная навигация" className="hidden shrink-0 items-center gap-0.5 md:flex lg:gap-1">
+        <nav aria-label="Основная навигация" className="hidden shrink-0 items-center gap-0.5 lg:flex lg:gap-1">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -52,7 +52,7 @@ export function Header() {
             <>
               <a
                 href={`tel:${primaryPhone.tel}`}
-                className="hidden items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-2 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50 md:flex lg:gap-2 lg:px-3"
+                className="hidden items-center gap-1.5 whitespace-nowrap rounded-full px-2 py-2 text-sm font-semibold text-brand-700 transition-colors hover:bg-brand-50 lg:flex lg:gap-2 lg:px-3"
               >
                 <Phone className="size-4" aria-hidden="true" />
                 {primaryPhone.display}
@@ -60,13 +60,13 @@ export function Header() {
               <a
                 href={`tel:${primaryPhone.tel}`}
                 aria-label={`Позвонить ${primaryPhone.display}`}
-                className="touch-target rounded-full text-brand-700 hover:bg-brand-50 md:hidden"
+                className="touch-target rounded-full text-brand-700 hover:bg-brand-50 lg:hidden"
               >
                 <Phone className="size-5" />
               </a>
             </>
           ) : null}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link href="/zapis/" className={buttonVariants()}>
               Записаться
               <ArrowRight className="ml-1 size-4 transition-transform duration-300 ease-out group-hover/button:translate-x-1" />
